@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="62Z-dj-kCJ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,108 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ArtFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ElB-zj-Jtr">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="grZ-ek-3Kp">
+                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="artistCell" rowHeight="120" id="3sd-54-OYT">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3sd-54-OYT" id="pDs-G5-NIA">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JFT-dn-96r">
+                                                    <rect key="frame" x="20" y="20" width="200" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="200" id="31w-Qp-5o3"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39H-G7-dxy">
+                                                    <rect key="frame" x="228" y="19" width="158" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="39H-G7-dxy" firstAttribute="leading" secondItem="JFT-dn-96r" secondAttribute="trailing" constant="8" id="G0I-de-zjU"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="39H-G7-dxy" secondAttribute="trailing" constant="8" id="HKf-d9-mBC"/>
+                                                <constraint firstItem="JFT-dn-96r" firstAttribute="top" secondItem="pDs-G5-NIA" secondAttribute="top" constant="20" symbolic="YES" id="P7m-hA-iDT"/>
+                                                <constraint firstItem="39H-G7-dxy" firstAttribute="top" secondItem="pDs-G5-NIA" secondAttribute="topMargin" constant="8" id="Z7K-Ne-3NE"/>
+                                                <constraint firstAttribute="bottom" secondItem="JFT-dn-96r" secondAttribute="bottom" constant="20" symbolic="YES" id="h96-bt-uwp"/>
+                                                <constraint firstItem="JFT-dn-96r" firstAttribute="leading" secondItem="pDs-G5-NIA" secondAttribute="leading" constant="20" symbolic="YES" id="xn8-lv-7vU"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="grZ-ek-3Kp" secondAttribute="bottom" id="9jw-Uo-FS5"/>
+                            <constraint firstItem="grZ-ek-3Kp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="P9s-VH-s6G"/>
+                            <constraint firstItem="ElB-zj-Jtr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QUj-bB-rFP"/>
+                            <constraint firstItem="ElB-zj-Jtr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="d1M-GB-RAE"/>
+                            <constraint firstItem="ElB-zj-Jtr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="icm-gM-aRR"/>
+                            <constraint firstItem="grZ-ek-3Kp" firstAttribute="top" secondItem="ElB-zj-Jtr" secondAttribute="bottom" symbolic="YES" id="rZR-SI-r9g"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="grZ-ek-3Kp" secondAttribute="trailing" id="u9d-PX-h6V"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vhc-74-uWa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1542.0289855072465" y="116.51785714285714"/>
+        </scene>
+        <!--Art Finder-->
+        <scene sceneID="t0p-Iz-zTy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vqX-Vh-hct" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Art Finder" image="magnifyingglass" catalog="system" id="us3-sC-fUb"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iAs-vb-xkU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="I4x-zw-dzM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tns-Zp-1TT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="852.17391304347836" y="116.51785714285714"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="YB6-Ws-Khl">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="62Z-dj-kCJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="87B-oV-ShN">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="vqX-Vh-hct" kind="relationship" relationship="viewControllers" id="kAg-bz-Jdh"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tJ0-5N-8RE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-57.971014492753625" y="116.51785714285714"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+    </resources>
 </document>

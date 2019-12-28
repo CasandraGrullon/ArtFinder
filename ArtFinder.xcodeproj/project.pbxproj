@@ -14,6 +14,8 @@
 		C635D95123B7D2D300E97F84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C635D95023B7D2D300E97F84 /* Assets.xcassets */; };
 		C635D95423B7D2D300E97F84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C635D95223B7D2D300E97F84 /* LaunchScreen.storyboard */; };
 		C635D95F23B7D2D300E97F84 /* ArtFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D95E23B7D2D300E97F84 /* ArtFinderTests.swift */; };
+		C635D96A23B7E5CF00E97F84 /* ArtistResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D96923B7E5CF00E97F84 /* ArtistResults.swift */; };
+		C635D96C23B7E90600E97F84 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D96B23B7E90600E97F84 /* Artist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		C635D95A23B7D2D300E97F84 /* ArtFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArtFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C635D95E23B7D2D300E97F84 /* ArtFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtFinderTests.swift; sourceTree = "<group>"; };
 		C635D96023B7D2D300E97F84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C635D96923B7E5CF00E97F84 /* ArtistResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistResults.swift; sourceTree = "<group>"; };
+		C635D96B23B7E90600E97F84 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 				C635D94723B7D2CF00E97F84 /* AppDelegate.swift */,
 				C635D94923B7D2CF00E97F84 /* SceneDelegate.swift */,
 				C635D94B23B7D2CF00E97F84 /* ViewController.swift */,
+				C635D96923B7E5CF00E97F84 /* ArtistResults.swift */,
+				C635D96B23B7E90600E97F84 /* Artist.swift */,
 				C635D94D23B7D2CF00E97F84 /* Main.storyboard */,
 				C635D95023B7D2D300E97F84 /* Assets.xcassets */,
 				C635D95223B7D2D300E97F84 /* LaunchScreen.storyboard */,
@@ -202,6 +208,8 @@
 			files = (
 				C635D94C23B7D2CF00E97F84 /* ViewController.swift in Sources */,
 				C635D94823B7D2CF00E97F84 /* AppDelegate.swift in Sources */,
+				C635D96A23B7E5CF00E97F84 /* ArtistResults.swift in Sources */,
+				C635D96C23B7E90600E97F84 /* Artist.swift in Sources */,
 				C635D94A23B7D2CF00E97F84 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
