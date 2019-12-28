@@ -15,7 +15,8 @@
 		C635D95423B7D2D300E97F84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C635D95223B7D2D300E97F84 /* LaunchScreen.storyboard */; };
 		C635D95F23B7D2D300E97F84 /* ArtFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D95E23B7D2D300E97F84 /* ArtFinderTests.swift */; };
 		C635D96A23B7E5CF00E97F84 /* ArtistResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D96923B7E5CF00E97F84 /* ArtistResults.swift */; };
-		C635D96C23B7E90600E97F84 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D96B23B7E90600E97F84 /* Artist.swift */; };
+		C635D96C23B7E90600E97F84 /* ArtistInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D96B23B7E90600E97F84 /* ArtistInfo.swift */; };
+		C635D96E23B80E0700E97F84 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D96D23B80E0700E97F84 /* Artwork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +42,8 @@
 		C635D95E23B7D2D300E97F84 /* ArtFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtFinderTests.swift; sourceTree = "<group>"; };
 		C635D96023B7D2D300E97F84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C635D96923B7E5CF00E97F84 /* ArtistResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistResults.swift; sourceTree = "<group>"; };
-		C635D96B23B7E90600E97F84 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		C635D96B23B7E90600E97F84 /* ArtistInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistInfo.swift; sourceTree = "<group>"; };
+		C635D96D23B80E0700E97F84 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +89,8 @@
 				C635D94923B7D2CF00E97F84 /* SceneDelegate.swift */,
 				C635D94B23B7D2CF00E97F84 /* ViewController.swift */,
 				C635D96923B7E5CF00E97F84 /* ArtistResults.swift */,
-				C635D96B23B7E90600E97F84 /* Artist.swift */,
+				C635D96B23B7E90600E97F84 /* ArtistInfo.swift */,
+				C635D96D23B80E0700E97F84 /* Artwork.swift */,
 				C635D94D23B7D2CF00E97F84 /* Main.storyboard */,
 				C635D95023B7D2D300E97F84 /* Assets.xcassets */,
 				C635D95223B7D2D300E97F84 /* LaunchScreen.storyboard */,
@@ -206,10 +209,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C635D96E23B80E0700E97F84 /* Artwork.swift in Sources */,
 				C635D94C23B7D2CF00E97F84 /* ViewController.swift in Sources */,
 				C635D94823B7D2CF00E97F84 /* AppDelegate.swift in Sources */,
 				C635D96A23B7E5CF00E97F84 /* ArtistResults.swift in Sources */,
-				C635D96C23B7E90600E97F84 /* Artist.swift in Sources */,
+				C635D96C23B7E90600E97F84 /* ArtistInfo.swift in Sources */,
 				C635D94A23B7D2CF00E97F84 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
