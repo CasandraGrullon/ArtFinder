@@ -16,6 +16,7 @@ struct Artwork: Codable {
     let date: String
     let dimensions: Dimensions
     let imageLinks: ImageLinks
+    let location: String
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -25,6 +26,7 @@ struct Artwork: Codable {
         case date
         case dimensions
         case imageLinks = "_links"
+        case location = "collection_institution"
     }
 }
 struct Dimensions: Codable {

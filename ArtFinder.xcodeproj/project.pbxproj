@@ -17,6 +17,11 @@
 		C635D96A23B7E5CF00E97F84 /* ArtistResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D96923B7E5CF00E97F84 /* ArtistResults.swift */; };
 		C635D96C23B7E90600E97F84 /* ArtistInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D96B23B7E90600E97F84 /* ArtistInfo.swift */; };
 		C635D96E23B80E0700E97F84 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D96D23B80E0700E97F84 /* Artwork.swift */; };
+		C635D97123B811BD00E97F84 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D97023B811BD00E97F84 /* NetworkHelper.swift */; };
+		C635D97423B8121200E97F84 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D97323B8121200E97F84 /* AppError.swift */; };
+		C635D97623B8129000E97F84 /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D97523B8129000E97F84 /* ShowAlert.swift */; };
+		C635D97823B8131500E97F84 /* ImageViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D97723B8131500E97F84 /* ImageViewExt.swift */; };
+		C635D97A23B8134A00E97F84 /* ArtFinderAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D97923B8134A00E97F84 /* ArtFinderAPIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,11 @@
 		C635D96923B7E5CF00E97F84 /* ArtistResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistResults.swift; sourceTree = "<group>"; };
 		C635D96B23B7E90600E97F84 /* ArtistInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistInfo.swift; sourceTree = "<group>"; };
 		C635D96D23B80E0700E97F84 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
+		C635D97023B811BD00E97F84 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		C635D97323B8121200E97F84 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		C635D97523B8129000E97F84 /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
+		C635D97723B8131500E97F84 /* ImageViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExt.swift; sourceTree = "<group>"; };
+		C635D97923B8134A00E97F84 /* ArtFinderAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtFinderAPIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,9 +98,13 @@
 				C635D94723B7D2CF00E97F84 /* AppDelegate.swift */,
 				C635D94923B7D2CF00E97F84 /* SceneDelegate.swift */,
 				C635D94B23B7D2CF00E97F84 /* ViewController.swift */,
-				C635D96923B7E5CF00E97F84 /* ArtistResults.swift */,
-				C635D96B23B7E90600E97F84 /* ArtistInfo.swift */,
-				C635D96D23B80E0700E97F84 /* Artwork.swift */,
+				C635D97223B811CE00E97F84 /* Network Services + Ext */,
+				C635D97023B811BD00E97F84 /* NetworkHelper.swift */,
+				C635D97323B8121200E97F84 /* AppError.swift */,
+				C635D97523B8129000E97F84 /* ShowAlert.swift */,
+				C635D97723B8131500E97F84 /* ImageViewExt.swift */,
+				C635D97923B8134A00E97F84 /* ArtFinderAPIClient.swift */,
+				C635D96F23B8102400E97F84 /* Model */,
 				C635D94D23B7D2CF00E97F84 /* Main.storyboard */,
 				C635D95023B7D2D300E97F84 /* Assets.xcassets */,
 				C635D95223B7D2D300E97F84 /* LaunchScreen.storyboard */,
@@ -106,6 +120,23 @@
 				C635D96023B7D2D300E97F84 /* Info.plist */,
 			);
 			path = ArtFinderTests;
+			sourceTree = "<group>";
+		};
+		C635D96F23B8102400E97F84 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C635D96923B7E5CF00E97F84 /* ArtistResults.swift */,
+				C635D96B23B7E90600E97F84 /* ArtistInfo.swift */,
+				C635D96D23B80E0700E97F84 /* Artwork.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C635D97223B811CE00E97F84 /* Network Services + Ext */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Network Services + Ext";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,11 +240,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C635D97123B811BD00E97F84 /* NetworkHelper.swift in Sources */,
 				C635D96E23B80E0700E97F84 /* Artwork.swift in Sources */,
 				C635D94C23B7D2CF00E97F84 /* ViewController.swift in Sources */,
 				C635D94823B7D2CF00E97F84 /* AppDelegate.swift in Sources */,
+				C635D97623B8129000E97F84 /* ShowAlert.swift in Sources */,
+				C635D97423B8121200E97F84 /* AppError.swift in Sources */,
 				C635D96A23B7E5CF00E97F84 /* ArtistResults.swift in Sources */,
+				C635D97A23B8134A00E97F84 /* ArtFinderAPIClient.swift in Sources */,
 				C635D96C23B7E90600E97F84 /* ArtistInfo.swift in Sources */,
+				C635D97823B8131500E97F84 /* ImageViewExt.swift in Sources */,
 				C635D94A23B7D2CF00E97F84 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

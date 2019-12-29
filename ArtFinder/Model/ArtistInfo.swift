@@ -12,11 +12,11 @@ struct ArtistInfo: Codable {
     let links: Links
 }
 struct Link: Codable {
-    let thumbnail: Thumbnail
+    let thumbnail: Small
     let mediumImage: MediumImage
     let artworks: Artworks
 }
-struct Thumbnail: Codable {
+struct Small: Codable {
     let href: String
 }
 struct MediumImage: Codable {

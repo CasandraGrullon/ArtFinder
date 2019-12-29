@@ -9,9 +9,9 @@
 import Foundation
 
 struct ArtistResults: Codable {
-    let artist: [Artist]
+    let results: [Results]
 }
-struct Artist: Codable {
+struct Results: Codable {
     let type: String
     let title: String
     let links: Links
