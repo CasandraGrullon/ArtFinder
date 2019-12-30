@@ -9,6 +9,7 @@
 import Foundation
 
 struct ArtistInfo: Codable {
+    let id: String
     let links: Links
 }
 struct Link: Codable {
