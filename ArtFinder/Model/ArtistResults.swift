@@ -39,7 +39,7 @@ struct Links: Codable {
     }
 }
 struct ArtistLink: Codable {
-    let href: String?
+    var href: String?
 }
 struct Thumbnail: Codable {
     let href: String?

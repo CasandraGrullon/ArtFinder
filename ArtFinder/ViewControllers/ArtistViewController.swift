@@ -29,6 +29,8 @@ class ArtistViewController: UIViewController {
         super.viewDidLoad()
         loadArtistInfo()
         loadArtworks()
+        tableView.dataSource = self
+        tableView.delegate = self
         navigationItem.title = artistInfo?.name
 
     }
@@ -42,9 +44,13 @@ class ArtistViewController: UIViewController {
                 }
             case .success(let artist):
                 self?.artistInfo = artist
-                self?.yearsAliveLabel.text = "\(artist.birthday ?? "") - \(artist.deathday ?? "")"
-                self?.nationalityLabel.text = artist.nationality
-                self?.artistBio.text = artist.biography
+                DispatchQueue.main.async {
+                    self?.yearsAliveLabel.text = "\(artist.birthday ?? "") - \(artist.deathday ?? "")"
+                    self?.nationalityLabel.text = artist.nationality
+                    self?.artistBio.text = artist.biography
+                    
+                }
+                
             }
         }
     }
@@ -65,8 +71,21 @@ class ArtistViewController: UIViewController {
 
 }
 
-//extension ArtistViewController: UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return artworks.count
-//    }
-//}
+extension ArtistViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return artworks.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "artistCell", for: indexPath) as? ArtistCell else {
+            fatalError("issue in cell")
+        }
+        let art = artworks[indexPath.row]
+        cell.configureCell(for: art)
+        return cell
+    }
+}
+extension ArtistViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 180
+    }
+}

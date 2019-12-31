@@ -11,7 +11,7 @@ import Foundation
 struct ArtistInfo: Codable {
     let id: String?
     var name: String?
-    let links: Link?
+    var links: Link?
     let biography: String?
     let birthday: String?
     let deathday: String?
@@ -21,7 +21,7 @@ struct Link: Codable {
     let thumbnail: Small?
     let mediumImage: MediumImage?
     let artworks: Artworks?
-    let linkToApi: LinktoApi?
+    var linkToApi: LinktoApi?
     
     enum CodingKeys: String, CodingKey{
         case thumbnail
@@ -40,5 +40,5 @@ struct Artworks: Codable {
     let href: String?
 }
 struct LinktoApi: Codable {
-    let href: String?
+    var href: String?
 }
