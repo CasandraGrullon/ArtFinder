@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C6141BB023BBBE53002D576B /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6141BAF23BBBE53002D576B /* ArtistViewController.swift */; };
 		C6141BB223BBC34E002D576B /* ArtistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6141BB123BBC34E002D576B /* ArtistCell.swift */; };
+		C6141BB423BBD492002D576B /* ArtworkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6141BB323BBD492002D576B /* ArtworkDetailViewController.swift */; };
 		C635D94823B7D2CF00E97F84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D94723B7D2CF00E97F84 /* AppDelegate.swift */; };
 		C635D94A23B7D2CF00E97F84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D94923B7D2CF00E97F84 /* SceneDelegate.swift */; };
 		C635D94C23B7D2CF00E97F84 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D94B23B7D2CF00E97F84 /* SearchViewController.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		C6141BAF23BBBE53002D576B /* ArtistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
 		C6141BB123BBC34E002D576B /* ArtistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistCell.swift; sourceTree = "<group>"; };
+		C6141BB323BBD492002D576B /* ArtworkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkDetailViewController.swift; sourceTree = "<group>"; };
 		C635D94423B7D2CF00E97F84 /* ArtFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C635D94723B7D2CF00E97F84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C635D94923B7D2CF00E97F84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				C6597E0C23BAA41F00F2F48B /* SearchCell.swift */,
 				C6141BAF23BBBE53002D576B /* ArtistViewController.swift */,
 				C6141BB123BBC34E002D576B /* ArtistCell.swift */,
+				C6141BB323BBD492002D576B /* ArtworkDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			files = (
 				C635D97123B811BD00E97F84 /* NetworkHelper.swift in Sources */,
 				C6597E0D23BAA41F00F2F48B /* SearchCell.swift in Sources */,
+				C6141BB423BBD492002D576B /* ArtworkDetailViewController.swift in Sources */,
 				C6141BB223BBC34E002D576B /* ArtistCell.swift in Sources */,
 				C635D96E23B80E0700E97F84 /* Artwork.swift in Sources */,
 				C635D94C23B7D2CF00E97F84 /* SearchViewController.swift in Sources */,

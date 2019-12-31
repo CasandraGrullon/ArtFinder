@@ -32,7 +32,6 @@ class ArtistViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         navigationItem.title = artistInfo?.name
-
     }
 
     func loadArtistInfo() {
@@ -67,8 +66,6 @@ class ArtistViewController: UIViewController {
             }
         }
     }
-    
-
 }
 
 extension ArtistViewController: UITableViewDataSource {
