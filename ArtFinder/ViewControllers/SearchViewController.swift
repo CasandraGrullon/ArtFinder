@@ -9,7 +9,7 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -21,28 +21,31 @@ class SearchViewController: UIViewController {
         }
     }
     
-    var searchQuery = "Vincent van Gogh"
+    var searchQuery = "" {
+        didSet {
+            loadData(for: searchQuery)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData(for: searchQuery)
+        loadData(for: "Andy Warhol")
         tableView.dataSource = self
         searchBar.delegate = self
     }
-
+    
     func loadData(for search: String) {
         ArtFinderAPIClient.getSearch(for: search) { [weak self] (result) in
             switch result {
             case .failure(let appError):
-                DispatchQueue.main.async {
-                    self?.showAlert(title: "App Error", message: "\(appError)")
-                }
-            case .success(let search):
-                self?.artistResults = search
+                print("\(appError)")
+                print(appError)
+            case .success(let artist):
+                self?.artistResults = artist
             }
         }
     }
-
+    
 }
 
 extension SearchViewController: UITableViewDataSource {
@@ -60,6 +63,17 @@ extension SearchViewController: UITableViewDataSource {
         return cell
     }
 }
+extension SearchViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 180
+    }
+}
 extension SearchViewController: UISearchBarDelegate {
-    searc
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchQuery = searchText
+    }
+    
 }

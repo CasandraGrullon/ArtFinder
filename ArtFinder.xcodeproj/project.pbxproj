@@ -100,11 +100,6 @@
 				C635D94723B7D2CF00E97F84 /* AppDelegate.swift */,
 				C635D94923B7D2CF00E97F84 /* SceneDelegate.swift */,
 				C635D97223B811CE00E97F84 /* Network Services + Ext */,
-				C635D97023B811BD00E97F84 /* NetworkHelper.swift */,
-				C635D97323B8121200E97F84 /* AppError.swift */,
-				C635D97523B8129000E97F84 /* ShowAlert.swift */,
-				C635D97723B8131500E97F84 /* ImageViewExt.swift */,
-				C635D97923B8134A00E97F84 /* ArtFinderAPIClient.swift */,
 				C635D96F23B8102400E97F84 /* Model */,
 				C635D97B23BAA20100E97F84 /* ViewControllers */,
 				C635D94D23B7D2CF00E97F84 /* Main.storyboard */,
@@ -137,6 +132,11 @@
 		C635D97223B811CE00E97F84 /* Network Services + Ext */ = {
 			isa = PBXGroup;
 			children = (
+				C635D97023B811BD00E97F84 /* NetworkHelper.swift */,
+				C635D97323B8121200E97F84 /* AppError.swift */,
+				C635D97523B8129000E97F84 /* ShowAlert.swift */,
+				C635D97723B8131500E97F84 /* ImageViewExt.swift */,
+				C635D97923B8134A00E97F84 /* ArtFinderAPIClient.swift */,
 			);
 			path = "Network Services + Ext";
 			sourceTree = "<group>";

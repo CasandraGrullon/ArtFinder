@@ -22,7 +22,7 @@ class SearchCell: UITableViewCell {
             switch result {
             case .failure:
                 DispatchQueue.main.async {
-                    self?.artistImageView.image = UIImage(systemName: "user")
+                    self?.artistImageView.image = UIImage(systemName: "square")
                 }
             case .success(let image):
                 DispatchQueue.main.async {

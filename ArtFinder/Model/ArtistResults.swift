@@ -9,12 +9,25 @@
 import Foundation
 
 struct ArtistResults: Codable {
+    let embedded: Embedded
+    
+    enum CodingKeys: String, CodingKey {
+        case embedded = "_embedded"
+    }
+}
+struct Embedded: Codable {
     let results: [Results]
 }
 struct Results: Codable {
-    let type: String
-    let title: String
+    let type: String?
+    let title: String?
     let links: Links
+    
+    enum CodingKeys: String, CodingKey {
+        case type
+        case title
+        case links = "_links"
+    }
 }
 struct Links: Codable {
     let artistLink: ArtistLink

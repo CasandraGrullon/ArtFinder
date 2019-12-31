@@ -9,16 +9,21 @@
 import Foundation
 
 struct ArtFinderAPIClient {
+
     static func getSearch(for search: String, completion: @escaping (Result<[Results], AppError>) -> () ) {
         
-        let searchQuery = search.lowercased().addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "Picasso"
+        let seperatedWords = search.components(separatedBy: " ")
+        let plusPlus = seperatedWords.joined(separator: "+")
+        let searchQuery = plusPlus
         let endpointUrl = "https://api.artsy.net/api/search?q=\(searchQuery)"
         
         guard let url = URL(string: endpointUrl) else {
             completion(.failure(.badURL(endpointUrl)))
             return
         }
-        let request = URLRequest(url: url)
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsInN1YmplY3RfYXBwbGljYXRpb24iOiI1ZTA3OWRhMjk4NmVlMjAwMGVmM2U3YmQiLCJleHAiOjE1NzgxNjI1OTQsImlhdCI6MTU3NzU1Nzc5NCwiYXVkIjoiNWUwNzlkYTI5ODZlZTIwMDBlZjNlN2JkIiwiaXNzIjoiR3Jhdml0eSIsImp0aSI6IjVlMDc5ZjIyZDE4YzlhMDAxMWZkNGU2YiJ9.cxWoR_e2u0m9Dj3M8e8kLVz8TsUxcZEqP789cbTbP8U", forHTTPHeaderField: "X-Xapp-Token")
         
         NetworkHelper.shared.performDataTask(with: request) { (result) in
             switch result {
@@ -26,7 +31,8 @@ struct ArtFinderAPIClient {
                 completion(.failure(.networkClientError(appError)))
             case .success(let data):
                 do{
-                    let searchResults = try JSONDecoder().decode([Results].self, from: data)
+                    let artResults = try JSONDecoder().decode(ArtistResults.self, from: data)
+                    let searchResults = artResults.embedded.results
                     completion(.success(searchResults))
                 } catch {
                     completion(.failure(.decodingError(error)))
@@ -44,7 +50,9 @@ struct ArtFinderAPIClient {
             return
         }
         
-        let request = URLRequest(url: url)
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsInN1YmplY3RfYXBwbGljYXRpb24iOiI1ZTA3OWRhMjk4NmVlMjAwMGVmM2U3YmQiLCJleHAiOjE1NzgxNjI1OTQsImlhdCI6MTU3NzU1Nzc5NCwiYXVkIjoiNWUwNzlkYTI5ODZlZTIwMDBlZjNlN2JkIiwiaXNzIjoiR3Jhdml0eSIsImp0aSI6IjVlMDc5ZjIyZDE4YzlhMDAxMWZkNGU2YiJ9.cxWoR_e2u0m9Dj3M8e8kLVz8TsUxcZEqP789cbTbP8U", forHTTPHeaderField: "X-Xapp-Token")
         
         NetworkHelper.shared.performDataTask(with: request) { (result) in
             switch result {
@@ -69,7 +77,9 @@ struct ArtFinderAPIClient {
             completion(.failure(.badURL(endpointURL)))
             return
         }
-        let request = URLRequest(url: url)
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsInN1YmplY3RfYXBwbGljYXRpb24iOiI1ZTA3OWRhMjk4NmVlMjAwMGVmM2U3YmQiLCJleHAiOjE1NzgxNjI1OTQsImlhdCI6MTU3NzU1Nzc5NCwiYXVkIjoiNWUwNzlkYTI5ODZlZTIwMDBlZjNlN2JkIiwiaXNzIjoiR3Jhdml0eSIsImp0aSI6IjVlMDc5ZjIyZDE4YzlhMDAxMWZkNGU2YiJ9.cxWoR_e2u0m9Dj3M8e8kLVz8TsUxcZEqP789cbTbP8U", forHTTPHeaderField: "X-Xapp-Token")
         
         NetworkHelper.shared.performDataTask(with: request) { (result) in
             switch result {
