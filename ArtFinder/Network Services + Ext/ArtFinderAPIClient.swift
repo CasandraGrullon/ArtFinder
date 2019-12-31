@@ -41,7 +41,7 @@ struct ArtFinderAPIClient {
         }
     }
     
-    static func getArtist(with artID: String, completion: @escaping (Result<[ArtistInfo], AppError>) -> ()) {
+    static func getArtist(with artID: String, completion: @escaping (Result<ArtistInfo, AppError>) -> ()) {
         
         let endpointURL = "https://api.artsy.net/api/artists/\(artID)"
         
@@ -60,7 +60,7 @@ struct ArtFinderAPIClient {
                 completion(.failure(.networkClientError(appError)))
             case .success(let data):
                 do{
-                    let artistResults = try JSONDecoder().decode([ArtistInfo].self, from: data)
+                    let artistResults = try JSONDecoder().decode(ArtistInfo.self, from: data)
                     completion(.success(artistResults))
                 }catch {
                     completion(.failure(.decodingError(error)))

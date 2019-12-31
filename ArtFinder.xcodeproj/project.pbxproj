@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C6141BB023BBBE53002D576B /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6141BAF23BBBE53002D576B /* ArtistViewController.swift */; };
 		C635D94823B7D2CF00E97F84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D94723B7D2CF00E97F84 /* AppDelegate.swift */; };
 		C635D94A23B7D2CF00E97F84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D94923B7D2CF00E97F84 /* SceneDelegate.swift */; };
 		C635D94C23B7D2CF00E97F84 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D94B23B7D2CF00E97F84 /* SearchViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C6141BAF23BBBE53002D576B /* ArtistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
 		C635D94423B7D2CF00E97F84 /* ArtFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C635D94723B7D2CF00E97F84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C635D94923B7D2CF00E97F84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			children = (
 				C635D94B23B7D2CF00E97F84 /* SearchViewController.swift */,
 				C6597E0C23BAA41F00F2F48B /* SearchCell.swift */,
+				C6141BAF23BBBE53002D576B /* ArtistViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				C635D94C23B7D2CF00E97F84 /* SearchViewController.swift in Sources */,
 				C635D94823B7D2CF00E97F84 /* AppDelegate.swift in Sources */,
 				C635D97623B8129000E97F84 /* ShowAlert.swift in Sources */,
+				C6141BB023BBBE53002D576B /* ArtistViewController.swift in Sources */,
 				C635D97423B8121200E97F84 /* AppError.swift in Sources */,
 				C635D96A23B7E5CF00E97F84 /* ArtistResults.swift in Sources */,
 				C635D97A23B8134A00E97F84 /* ArtFinderAPIClient.swift in Sources */,

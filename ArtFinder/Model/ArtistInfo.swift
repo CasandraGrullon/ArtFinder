@@ -9,20 +9,21 @@
 import Foundation
 
 struct ArtistInfo: Codable {
-    let id: String
-    let links: Links
+    let id: String?
+    let name: String?
+    let links: Link?
 }
 struct Link: Codable {
-    let thumbnail: Small
-    let mediumImage: MediumImage
-    let artworks: Artworks
+    let thumbnail: Small?
+    let mediumImage: MediumImage?
+    let artworks: Artworks?
 }
 struct Small: Codable {
-    let href: String
+    let href: String?
 }
 struct MediumImage: Codable {
-    let href: String
+    let href: String?
 }
 struct Artworks: Codable {
-    let href: String
+    let href: String?
 }
