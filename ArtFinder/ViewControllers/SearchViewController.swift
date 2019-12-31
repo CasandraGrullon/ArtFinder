@@ -49,7 +49,7 @@ class SearchViewController: UIViewController {
         guard let artistVC = segue.destination as? ArtistViewController, let indexPath = tableView.indexPathForSelectedRow else {
             fatalError("issues in segue")
         }
-        artistVC.artistInfo = artistResults
+        
     }
     
 }

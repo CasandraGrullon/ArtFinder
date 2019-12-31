@@ -10,7 +10,7 @@ import Foundation
 
 struct ArtistInfo: Codable {
     let id: String?
-    let name: String?
+    var name: String?
     let links: Link?
     let biography: String?
     let birthday: String?
@@ -21,6 +21,14 @@ struct Link: Codable {
     let thumbnail: Small?
     let mediumImage: MediumImage?
     let artworks: Artworks?
+    let linkToApi: LinktoApi?
+    
+    enum CodingKeys: String, CodingKey{
+        case thumbnail
+        case mediumImage = "image"
+        case artworks
+        case linkToApi = "self"
+    }
 }
 struct Small: Codable {
     let href: String?
@@ -29,5 +37,8 @@ struct MediumImage: Codable {
     let href: String?
 }
 struct Artworks: Codable {
+    let href: String?
+}
+struct LinktoApi: Codable {
     let href: String?
 }
