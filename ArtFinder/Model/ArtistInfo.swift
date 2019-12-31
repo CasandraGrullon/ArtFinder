@@ -12,6 +12,10 @@ struct ArtistInfo: Codable {
     let id: String?
     let name: String?
     let links: Link?
+    let biography: String?
+    let birthday: String?
+    let deathday: String?
+    let nationality: String?
 }
 struct Link: Codable {
     let thumbnail: Small?

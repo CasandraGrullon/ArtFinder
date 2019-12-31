@@ -9,14 +9,14 @@
 import Foundation
 
 struct Artwork: Codable {
-    let id: String
-    let title: String
-    let category: String
-    let medium: String
-    let date: String
-    let dimensions: Dimensions
-    let imageLinks: ImageLinks
-    let location: String
+    let id: String?
+    let title: String?
+    let category: String?
+    let medium: String?
+    let date: String?
+    let dimensions: Dimensions?
+    let imageLinks: ImageLinks?
+    let location: String?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -30,23 +30,23 @@ struct Artwork: Codable {
     }
 }
 struct Dimensions: Codable {
-    let inches: Inches
+    let inches: Inches?
     
     enum CodingKeys: String, CodingKey {
         case inches = "in"
     }
 }
 struct Inches: Codable {
-    let text: String
+    let text: String?
 }
 struct ImageLinks: Codable {
-    let thumbnail: Thumb
-    let largeImage: LargeImage
+    let thumbnail: Thumb?
+    let largeImage: LargeImage?
 }
 struct Thumb: Codable {
-    let href: String
+    let href: String?
 }
 struct LargeImage: Codable {
-    let href: String
+    let href: String?
 }
 

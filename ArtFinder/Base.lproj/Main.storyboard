@@ -116,7 +116,7 @@
                                 <rect key="frame" x="0.0" y="373.5" width="414" height="439.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="artistCell" rowHeight="130" id="WVw-d8-m7g">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="artistCell" rowHeight="130" id="WVw-d8-m7g" customClass="ArtistCell" customModule="ArtFinder" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WVw-d8-m7g" id="gvf-N7-joI">
@@ -154,6 +154,11 @@
                                                 <constraint firstItem="UVC-CN-qkE" firstAttribute="leading" secondItem="3Uq-B2-1Gi" secondAttribute="trailing" constant="8" id="u3P-yw-8HR"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="artworkDateLabel" destination="XnD-2P-5Uf" id="dpE-sJ-jP1"/>
+                                            <outlet property="artworkImage" destination="3Uq-B2-1Gi" id="THc-PH-qch"/>
+                                            <outlet property="artworkTitle" destination="UVC-CN-qkE" id="D9s-uZ-ZId"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

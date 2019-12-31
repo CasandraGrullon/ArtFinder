@@ -28,6 +28,7 @@ class ArtistViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadArtistInfo()
+        loadArtworks()
         navigationItem.title = artistInfo?.name
 
     }
@@ -35,19 +36,37 @@ class ArtistViewController: UIViewController {
     func loadArtistInfo() {
         ArtFinderAPIClient.getArtist(with: artistInfo?.id ?? "4d8b92b34eb68a1b2c0003f4") { [weak self] (result) in
             switch result{
-            case .failure(let appError) :
+            case .failure(let artistError):
                 DispatchQueue.main.async {
-                    self?.showAlert(title: "App Error", message: "\(appError)")
+                    self?.showAlert(title: "Artist Error", message: "\(artistError)")
                 }
             case .success(let artist):
                 self?.artistInfo = artist
+                self?.yearsAliveLabel.text = "\(artist.birthday ?? "") - \(artist.deathday ?? "")"
+                self?.nationalityLabel.text = artist.nationality
+                self?.artistBio.text = artist.biography
             }
         }
     }
     
     func loadArtworks() {
-        
+        ArtFinderAPIClient.getArtworks(with: artistInfo?.id ?? "4d8b92b34eb68a1b2c0003f4") { [weak self] (result) in
+            switch result {
+            case .failure(let artworkError):
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "Artwork Error", message: "\(artworkError)")
+                }
+            case .success(let artwork):
+                self?.artworks = artwork
+            }
+        }
     }
     
 
 }
+
+//extension ArtistViewController: UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return artworks.count
+//    }
+//}
