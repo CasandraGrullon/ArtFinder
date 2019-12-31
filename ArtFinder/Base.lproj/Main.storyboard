@@ -54,8 +54,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="artistImageView" destination="JFT-dn-96r" id="6Bj-MA-QyX"/>
-                                            <outlet property="artistNameLabel" destination="39H-G7-dxy" id="2WB-vu-YOx"/>
+                                            <outlet property="artistImageView" destination="JFT-dn-96r" id="hhL-UP-Njd"/>
+                                            <outlet property="artistNameLabel" destination="39H-G7-dxy" id="hgd-m7-vUA"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -11,14 +11,13 @@ import UIKit
 class SearchCell: UITableViewCell {
 
     @IBOutlet weak var artistImageView: UIImageView!
-    
     @IBOutlet weak var artistNameLabel: UILabel!
     
     var artSearch: Results?
     
-    func configureCell(for search: Results ) {
-        artistNameLabel.text = artSearch?.title
-        artistImageView.getImage(with: artSearch?.links.thumbnail.href ?? "") { [weak self] (result) in
+    func configureCell(for search: Results) {
+        artistNameLabel.text = search.title
+        artistImageView.getImage(with: search.links?.thumbnail?.href ?? "") { [weak self] (result) in
             switch result {
             case .failure:
                 DispatchQueue.main.async {

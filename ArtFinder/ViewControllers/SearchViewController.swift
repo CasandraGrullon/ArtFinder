@@ -41,7 +41,7 @@ class SearchViewController: UIViewController {
                 print("\(appError)")
                 print(appError)
             case .success(let artist):
-                self?.artistResults = artist
+                self?.artistResults = artist.filter{$0.type == "artist"}
             }
         }
     }
@@ -65,7 +65,7 @@ extension SearchViewController: UITableViewDataSource {
 }
 extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 180
+        return 200
     }
 }
 extension SearchViewController: UISearchBarDelegate {

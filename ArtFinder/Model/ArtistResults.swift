@@ -21,7 +21,7 @@ struct Embedded: Codable {
 struct Results: Codable {
     let type: String?
     let title: String?
-    let links: Links
+    let links: Links?
     
     enum CodingKeys: String, CodingKey {
         case type
@@ -30,8 +30,8 @@ struct Results: Codable {
     }
 }
 struct Links: Codable {
-    let artistLink: ArtistLink
-    let thumbnail: Thumbnail
+    let artistLink: ArtistLink?
+    let thumbnail: Thumbnail?
     
     enum CodingKeys: String, CodingKey {
         case artistLink = "self"
@@ -39,8 +39,8 @@ struct Links: Codable {
     }
 }
 struct ArtistLink: Codable {
-    let href: String
+    let href: String?
 }
 struct Thumbnail: Codable {
-    let href: String
+    let href: String?
 }
