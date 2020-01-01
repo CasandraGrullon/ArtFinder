@@ -50,7 +50,11 @@ class SearchViewController: UIViewController {
         guard let artistVC = segue.destination as? ArtistViewController, let indexPath = tableView.indexPathForSelectedRow else {
             fatalError("issues in segue")
         }
-        artistVC.searchResults = artistResults[indexPath.row]
+        //if searchResults?.links?.artistLink?.href == artistInfo?.links?.linkToApi?.href {
+        if artistResults.first?.links?.artistLink?.href == artistVC.artistInfo?.links?.linkToApi?.href {
+            artistVC.searchResults = artistResults[indexPath.row]
+
+        }
     }
 }
 

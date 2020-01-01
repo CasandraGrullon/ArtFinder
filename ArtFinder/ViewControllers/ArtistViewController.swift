@@ -60,6 +60,8 @@ class ArtistViewController: UIViewController {
                 
             }
         }
+        
+        
     }
     
     func loadArtworks() {
