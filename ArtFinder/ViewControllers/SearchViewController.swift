@@ -13,6 +13,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    var artist: ArtistInfo?
     var artistResults = [Results]() {
         didSet{
             DispatchQueue.main.async {
@@ -29,7 +30,7 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData(for: "Andy Warhol")
+        loadData(for: "Vincent van Gogh")
         tableView.dataSource = self
         searchBar.delegate = self
     }
@@ -38,10 +39,17 @@ class SearchViewController: UIViewController {
         ArtFinderAPIClient.getSearch(for: search) { [weak self] (result) in
             switch result {
             case .failure(let appError):
-                print("\(appError)")
                 print(appError)
             case .success(let artist):
                 self?.artistResults = artist.filter{$0.type == "artist"}
+            }
+        }
+        ArtFinderAPIClient.getArtistFromSearch(with: artist?.id ?? "") { [weak self] (result) in
+            switch result {
+            case .failure(let appErrorMessage):
+                print(appErrorMessage)
+            case .success(let art):
+                self?.artist?.links?.linkToApi?.href = art
             }
         }
     }
@@ -49,9 +57,8 @@ class SearchViewController: UIViewController {
         guard let artistVC = segue.destination as? ArtistViewController, let indexPath = tableView.indexPathForSelectedRow else {
             fatalError("issues in segue")
         }
-        artistVC.artistInfo?.links?.linkToApi?.href = artistResults.first?.links?.artistLink?.href
+        artistVC.searchResults = artistResults[indexPath.row]
     }
-    
 }
 
 extension SearchViewController: UITableViewDataSource {
@@ -81,5 +88,4 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchQuery = searchText
     }
-    
 }

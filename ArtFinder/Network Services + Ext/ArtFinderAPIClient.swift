@@ -9,7 +9,7 @@
 import Foundation
 
 struct ArtFinderAPIClient {
-
+    
     static func getSearch(for search: String, completion: @escaping (Result<[Results], AppError>) -> () ) {
         
         let seperatedWords = search.components(separatedBy: " ")
@@ -32,13 +32,44 @@ struct ArtFinderAPIClient {
             case .success(let data):
                 do{
                     let artResults = try JSONDecoder().decode(ArtistResults.self, from: data)
-                    let searchResults = artResults.embedded.results
+                    let searchResults = artResults.embedded.results.filter{$0.type == "artist"}
                     completion(.success(searchResults))
                 } catch {
                     completion(.failure(.decodingError(error)))
                 }
             }
         }
+    }
+    
+    static func getArtistFromSearch(with id: String, completion: @escaping (Result<String, AppError>) -> ()){
+        
+        let endPointURL = "https://api.artsy.net/api/artists/\(id)"
+        
+        guard let url = URL(string: endPointURL) else {
+            completion(.failure(.badURL(endPointURL)))
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsInN1YmplY3RfYXBwbGljYXRpb24iOiI1ZTA3OWRhMjk4NmVlMjAwMGVmM2U3YmQiLCJleHAiOjE1NzgxNjI1OTQsImlhdCI6MTU3NzU1Nzc5NCwiYXVkIjoiNWUwNzlkYTI5ODZlZTIwMDBlZjNlN2JkIiwiaXNzIjoiR3Jhdml0eSIsImp0aSI6IjVlMDc5ZjIyZDE4YzlhMDAxMWZkNGU2YiJ9.cxWoR_e2u0m9Dj3M8e8kLVz8TsUxcZEqP789cbTbP8U", forHTTPHeaderField: "X-Xapp-Token")
+        
+        NetworkHelper.shared.performDataTask(with: request) { (result) in
+            switch result {
+            case .failure(let appError):
+                completion(.failure(.networkClientError(appError)))
+            case .success(let data):
+                do{
+                    let artLink = try JSONDecoder().decode(ArtistLink.self, from: data)
+                    guard let results = artLink.href else {
+                        return
+                    }
+                    completion(.success(results))
+                }catch{
+                    completion(.failure(.decodingError(error)))
+                }
+            }
+        }
+        
     }
     
     static func getArtist(with artID: String, completion: @escaping (Result<ArtistInfo, AppError>) -> ()) {

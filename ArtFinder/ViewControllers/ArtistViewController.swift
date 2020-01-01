@@ -9,13 +9,14 @@
 import UIKit
 
 class ArtistViewController: UIViewController {
-
+    
     @IBOutlet weak var artistImage: UIImageView!
     @IBOutlet weak var yearsAliveLabel: UILabel!
     @IBOutlet weak var nationalityLabel: UILabel!
     @IBOutlet weak var artistBio: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
+    var searchResults: Results?
     var artistInfo: ArtistInfo?
     var artworks = [Artwork]() {
         didSet{
@@ -33,25 +34,28 @@ class ArtistViewController: UIViewController {
         tableView.delegate = self
         navigationItem.title = artistInfo?.name
     }
-
+    
     func loadArtistInfo() {
-        ArtFinderAPIClient.getArtist(with: artistInfo?.id ?? "4d8b92b34eb68a1b2c0003f4") { [weak self] (result) in
-            switch result{
-            case .failure(let artistError):
-                DispatchQueue.main.async {
-                    self?.showAlert(title: "Artist Error", message: "\(artistError)")
-                }
-            case .success(let artist):
-                self?.artistInfo = artist
-                DispatchQueue.main.async {
-                    self?.yearsAliveLabel.text = "\(artist.birthday ?? "") - \(artist.deathday ?? "")"
-                    self?.nationalityLabel.text = artist.nationality
-                    self?.artistBio.text = artist.biography
+        if "https://api.artsy.net/api/artists/\(artistInfo?.id ?? "4d8b92b34eb68a1b2c0003f4")" == searchResults?.links?.artistLink?.href {
+            ArtFinderAPIClient.getArtist(with: artistInfo?.id ?? "4d8b92b34eb68a1b2c0003f4") { [weak self] (result) in
+                switch result{
+                case .failure(let artistError):
+                    DispatchQueue.main.async {
+                        self?.showAlert(title: "Artist Error", message: "\(artistError)")
+                    }
+                case .success(let artist):
+                    self?.artistInfo = artist
+                    DispatchQueue.main.async {
+                        self?.yearsAliveLabel.text = "\(artist.birthday ?? "") - \(artist.deathday ?? "")"
+                        self?.nationalityLabel.text = artist.nationality
+                        self?.artistBio.text = artist.biography
+                        
+                    }
                     
                 }
-                
             }
         }
+        
     }
     
     func loadArtworks() {
@@ -65,6 +69,12 @@ class ArtistViewController: UIViewController {
                 self?.artworks = artwork
             }
         }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let artworkDetails = segue.destination as? ArtworkDetailViewController, let indexPath = tableView.indexPathForSelectedRow else {
+            fatalError("issue in artist to artwork segue")
+        }
+        artworkDetails.artwork = artworks[indexPath.row]
     }
 }
 

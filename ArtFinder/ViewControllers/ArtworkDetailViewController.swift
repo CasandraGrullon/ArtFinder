@@ -22,6 +22,8 @@ class ArtworkDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        updateUI()
+        navigationItem.title = artwork?.title
     }
 
     func updateUI() {
