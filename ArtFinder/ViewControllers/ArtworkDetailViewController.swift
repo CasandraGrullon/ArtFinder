@@ -17,7 +17,7 @@ class ArtworkDetailViewController: UIViewController {
     @IBOutlet weak var dimensionsLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     
-    var artwork: Artwork?
+    var artwork: ArtworkArray?
     
     override func viewDidLoad() {
         super.viewDidLoad()

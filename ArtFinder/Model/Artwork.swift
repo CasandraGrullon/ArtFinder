@@ -9,6 +9,17 @@
 import Foundation
 
 struct Artwork: Codable {
+    let embed: Embed?
+    
+    enum CodingKeys: String, CodingKey {
+        case embed = "_embedded"
+    }
+}
+struct Embed: Codable {
+    let artworks: [ArtworkArray]?
+}
+
+struct ArtworkArray: Codable {
     let id: String?
     let title: String?
     let category: String?

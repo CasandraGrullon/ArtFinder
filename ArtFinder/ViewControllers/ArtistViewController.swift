@@ -18,7 +18,7 @@ class ArtistViewController: UIViewController {
     
     var searchResults: Results?
     var artistInfo: ArtistInfo?
-    var artworks = [Artwork]() {
+    var artworks = [ArtworkArray]() {
         didSet{
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -48,7 +48,14 @@ class ArtistViewController: UIViewController {
                     self?.yearsAliveLabel.text = "\(artist.birthday ?? "") - \(artist.deathday ?? "")"
                     self?.nationalityLabel.text = artist.nationality
                     self?.artistBio.text = artist.biography
-                    
+                    self?.artistImage.getImage(with: artist.links?.mediumImage?.href ?? "", completion: { (result) in
+                        switch result {
+                        case .failure:
+                            self?.artistImage.image = UIImage(systemName: "person")
+                        case .success(let image):
+                            self?.artistImage.image = image
+                        }
+                    })
                 }
                 
             }
@@ -59,6 +66,7 @@ class ArtistViewController: UIViewController {
         ArtFinderAPIClient.getArtworks(with: artistInfo?.id ?? "4d8b92b34eb68a1b2c0003f4") { [weak self] (result) in
             switch result {
             case .failure(let artworkError):
+                //print("artwork error \(artworkError)")
                 DispatchQueue.main.async {
                     self?.showAlert(title: "Artwork Error", message: "\(artworkError)")
                 }
