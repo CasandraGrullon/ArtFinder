@@ -44,15 +44,8 @@ class SearchViewController: UIViewController {
                 self?.artistResults = artist.filter{$0.type == "artist"}
             }
         }
-        ArtFinderAPIClient.getArtistFromSearch(with: artist?.id ?? "") { [weak self] (result) in
-            switch result {
-            case .failure(let appErrorMessage):
-                print(appErrorMessage)
-            case .success(let art):
-                self?.artist?.links?.linkToApi?.href = art
-            }
-        }
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let artistVC = segue.destination as? ArtistViewController, let indexPath = tableView.indexPathForSelectedRow else {
             fatalError("issues in segue")

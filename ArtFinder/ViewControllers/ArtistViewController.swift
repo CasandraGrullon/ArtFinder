@@ -36,26 +36,23 @@ class ArtistViewController: UIViewController {
     }
     
     func loadArtistInfo() {
-        if "https://api.artsy.net/api/artists/\(artistInfo?.id ?? "4d8b92b34eb68a1b2c0003f4")" == searchResults?.links?.artistLink?.href {
-            ArtFinderAPIClient.getArtist(with: artistInfo?.id ?? "4d8b92b34eb68a1b2c0003f4") { [weak self] (result) in
-                switch result{
-                case .failure(let artistError):
-                    DispatchQueue.main.async {
-                        self?.showAlert(title: "Artist Error", message: "\(artistError)")
-                    }
-                case .success(let artist):
-                    self?.artistInfo = artist
-                    DispatchQueue.main.async {
-                        self?.yearsAliveLabel.text = "\(artist.birthday ?? "") - \(artist.deathday ?? "")"
-                        self?.nationalityLabel.text = artist.nationality
-                        self?.artistBio.text = artist.biography
-                        
-                    }
+        ArtFinderAPIClient.getArtist(with: artistInfo?.id ?? "") { [weak self] (result) in
+            switch result{
+            case .failure(let artistError):
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "Artist Error", message: "\(artistError)")
+                }
+            case .success(let artist):
+                self?.artistInfo = artist
+                DispatchQueue.main.async {
+                    self?.yearsAliveLabel.text = "\(artist.birthday ?? "") - \(artist.deathday ?? "")"
+                    self?.nationalityLabel.text = artist.nationality
+                    self?.artistBio.text = artist.biography
                     
                 }
+                
             }
         }
-        
     }
     
     func loadArtworks() {
@@ -96,3 +93,4 @@ extension ArtistViewController: UITableViewDelegate {
         return 180
     }
 }
+
