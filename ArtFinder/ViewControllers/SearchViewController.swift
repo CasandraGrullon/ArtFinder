@@ -30,7 +30,6 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData(for: "Vincent van Gogh")
         tableView.dataSource = self
         searchBar.delegate = self
     }
@@ -50,10 +49,8 @@ class SearchViewController: UIViewController {
         guard let artistVC = segue.destination as? ArtistViewController, let indexPath = tableView.indexPathForSelectedRow else {
             fatalError("issues in segue")
         }
-        //if searchResults?.links?.artistLink?.href == artistInfo?.links?.linkToApi?.href {
         if artistResults.first?.links?.artistLink?.href == artistVC.artistInfo?.links?.linkToApi?.href {
             artistVC.searchResults = artistResults[indexPath.row]
-
         }
     }
 }
