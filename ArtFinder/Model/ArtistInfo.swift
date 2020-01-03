@@ -29,21 +29,16 @@ struct ArtistInfo: Codable {
 }
 struct Link: Codable {
     let thumbnail: Small?
-    let image: MediumImage?
     var selflink: Permalink?
     let artworks: Artworks?
 
     enum CodingKeys: String, CodingKey {
         case thumbnail
-        case image
         case selflink = "self"
         case artworks
     }
 }
 struct Small: Codable {
-    let href: String?
-}
-struct MediumImage: Codable {
     let href: String?
 }
 struct Artworks: Codable {

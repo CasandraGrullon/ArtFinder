@@ -13,20 +13,22 @@ class ArtistViewController: UIViewController {
     @IBOutlet weak var artistImage: UIImageView!
     @IBOutlet weak var yearsAliveLabel: UILabel!
     @IBOutlet weak var nationalityLabel: UILabel!
-    @IBOutlet weak var artistBio: UILabel!
+    
+    @IBOutlet weak var artistBio: UITextView!
     
     var searchResults: Results?
     var artistInfo: ArtistInfo?
-    var artwork: ArtworkArray?
+    var artwork = [ArtworkArray]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = artistInfo?.name
-        loadArtistInfo()
+        loadArtistInfo(for: searchResults!)
+        navigationItem.title = searchResults?.title
     }
     
-    func loadArtistInfo() {
-        let link = searchResults?.links?.selflink?.href?.components(separatedBy: "/")
+    func loadArtistInfo(for search: Results) {
+        let link = search.links?.selflink?.href?.components(separatedBy: "/")
         let artID = link?.last ?? ""
         ArtFinderAPIClient.getArtist(with: artID) { [weak self] (result) in
             switch result {
@@ -38,12 +40,17 @@ class ArtistViewController: UIViewController {
                     self?.artistBio.text = artist.biography
                     self?.yearsAliveLabel.text = "\(artist.birthday ?? "1993") - \(artist.deathday ?? "1993")"
                     self?.nationalityLabel.text = artist.nationality
-                    self?.artistImage.getImage(with: artist.links?.image?.href ?? "", completion: { (result) in
+                    self?.artistImage.getImage(with: artist.links?.thumbnail?.href ?? "", completion: { (result) in
                         switch result {
                         case .failure:
-                            self?.artistImage.image = UIImage(systemName: "person")
+                            DispatchQueue.main.async {
+                                self?.artistImage.image = UIImage(systemName: "person")
+                                
+                            }
                         case .success(let image):
-                            self?.artistImage.image = image
+                            DispatchQueue.main.async {
+                                self?.artistImage.image = image
+                            }
                         }
                     })
                 }
@@ -55,7 +62,7 @@ class ArtistViewController: UIViewController {
         guard let artworksVC = segue.destination as? ArtworksViewController else {
             fatalError("segue issue on artworks button")
         }
-        artworksVC.artworks = [artwork!]
+        artworksVC.artworks = artwork
     }
     
 }
