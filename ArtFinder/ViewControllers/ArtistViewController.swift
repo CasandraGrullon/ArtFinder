@@ -14,29 +14,21 @@ class ArtistViewController: UIViewController {
     @IBOutlet weak var yearsAliveLabel: UILabel!
     @IBOutlet weak var nationalityLabel: UILabel!
     @IBOutlet weak var artistBio: UILabel!
-    @IBOutlet weak var tableView: UITableView!
     
     var searchResults: Results?
     var artistInfo: ArtistInfo?
-    var artworks = [ArtworkArray]() {
-        didSet{
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
+    var artworks: ArtworkArray?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadArtistInfo()
-        loadArtworks()
-        tableView.dataSource = self
-        tableView.delegate = self
+        if searchResults?.links?.artistLink?.href == artistInfo?.links?.linkToApi?.href {
+            loadArtistInfo()
+        }
         navigationItem.title = artistInfo?.name
     }
     
     func loadArtistInfo() {
-        ArtFinderAPIClient.getArtist(with: artistInfo?.id ?? "") { [weak self] (result) in
+        ArtFinderAPIClient.getArtist(with: artistInfo?.id ?? "4d8b92944eb68a1b2c000264") { [weak self] (result) in
             switch result{
             case .failure(let artistError):
                 DispatchQueue.main.async {
@@ -64,46 +56,32 @@ class ArtistViewController: UIViewController {
             }
         }
         
-        
     }
     
-    func loadArtworks() {
-        ArtFinderAPIClient.getArtworks(with: artistInfo?.id ?? "4d8b92944eb68a1b2c000264") { [weak self] (result) in
-            switch result {
-            case .failure(let artworkError):
-                print("artwork error \(artworkError)")
-//                DispatchQueue.main.async {
-//                    self?.showAlert(title: "Artwork Error", message: "\(artworkError)")
-//                }
-            case .success(let artwork):
-                self?.artworks = artwork
-            }
-        }
-    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let artworkDetails = segue.destination as? ArtworkDetailViewController, let indexPath = tableView.indexPathForSelectedRow else {
+        guard let artworkDetails = segue.destination as? ArtworkDetailViewController else {
             fatalError("issue in artist to artwork segue")
         }
-        artworkDetails.artwork = artworks[indexPath.row]
+        artworkDetails.artwork = artworks
     }
 }
 
-extension ArtistViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return artworks.count
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "artistCell", for: indexPath) as? ArtistCell else {
-            fatalError("issue in cell")
-        }
-        let art = artworks[indexPath.row]
-        cell.configureCell(for: art)
-        return cell
-    }
-}
-extension ArtistViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 180
-    }
-}
+//extension ArtistViewController: UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return artworks.count
+//    }
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "artistCell", for: indexPath) as? ArtistCell else {
+//            fatalError("issue in cell")
+//        }
+//        let art = artworks[indexPath.row]
+//        cell.configureCell(for: art)
+//        return cell
+//    }
+//}
+//extension ArtistViewController: UITableViewDelegate {
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 180
+//    }
+//}
 

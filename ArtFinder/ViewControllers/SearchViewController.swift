@@ -45,13 +45,25 @@ class SearchViewController: UIViewController {
         }
     }
     
+    func loadArtistInfo(for searchLink: String) {
+        if searchLink == artist?.links?.linkToApi?.href {
+            ArtFinderAPIClient.getArtist(with: artist?.id ?? "") { [weak self] (result) in
+                switch result {
+                case .failure(let artisterror):
+                    print(artisterror)
+                case .success(let artistInfo):
+                    self?.artist = artistInfo
+                }
+            }
+        }
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let artistVC = segue.destination as? ArtistViewController, let indexPath = tableView.indexPathForSelectedRow else {
             fatalError("issues in segue")
         }
-        if artistResults.first?.links?.artistLink?.href == artistVC.artistInfo?.links?.linkToApi?.href {
-            artistVC.searchResults = artistResults[indexPath.row]
-        }
+        artistVC.searchResults = artistResults[indexPath.row]
     }
 }
 
