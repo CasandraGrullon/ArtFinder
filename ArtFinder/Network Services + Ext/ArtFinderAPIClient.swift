@@ -89,11 +89,9 @@ struct ArtFinderAPIClient {
             case .success(let data):
                 do{
                     let artworkResults = try JSONDecoder().decode(Embed.self, from: data)
-                    guard let array = artworkResults.artworks else {
-                        return
-                    }
+                    let array = artworkResults.artworks
                     completion(.success(array))
-                }catch {
+                } catch {
                     completion(.failure(.decodingError(error)))
                 }
             }

@@ -12,19 +12,33 @@ class ArtworksViewController: UIViewController {
 
     @IBOutlet weak var tableview: UITableView!
     
-    var artworks = [ArtworkArray]() {
-        didSet {
+    var artist: ArtistInfo?
+    
+    var artworks = [ArtworkArray](){
+        didSet{
             DispatchQueue.main.async {
-                self.tableview.reloadData()
+            self.tableview.reloadData()
             }
         }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadArtworks(for: artist?.id ?? "")
+        tableview.dataSource = self
+        tableview.delegate = self
     }
     
 
+    func loadArtworks(for artist: String){
+        ArtFinderAPIClient.getArtworks(with: artist) { [weak self] (result) in
+            switch result {
+            case .failure(let arterror):
+                print(arterror)
+            case .success(let artworkslist):
+                self?.artworks = artworkslist
+            }
+        }
+    }
 
 }
 extension ArtworksViewController: UITableViewDataSource {
@@ -40,7 +54,7 @@ extension ArtworksViewController: UITableViewDataSource {
         return cell
     }
 }
-extension ArtistViewController: UITableViewDelegate {
+extension ArtworksViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 180
     }

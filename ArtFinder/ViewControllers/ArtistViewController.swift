@@ -18,7 +18,6 @@ class ArtistViewController: UIViewController {
     
     var searchResults: Results?
     var artistInfo: ArtistInfo?
-    var artwork = [ArtworkArray]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +61,7 @@ class ArtistViewController: UIViewController {
         guard let artworksVC = segue.destination as? ArtworksViewController else {
             fatalError("segue issue on artworks button")
         }
-        artworksVC.artworks = artwork
+        artworksVC.artist = artistInfo
     }
     
 }

@@ -16,7 +16,7 @@ struct Artwork: Codable {
     }
 }
 struct Embed: Codable {
-    let artworks: [ArtworkArray]?
+    let artworks: [ArtworkArray]
 }
 
 struct ArtworkArray: Codable {
