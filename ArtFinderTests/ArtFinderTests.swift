@@ -11,24 +11,22 @@ import XCTest
 
 class ArtFinderTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+    func testGetArtists(){
+        let artID = "4d8b92684eb68a1b2c00009e"
+        let link = "https://api.artsy.net/api/artists/\(artID)"
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        let exp = XCTestExpectation(description: "artist found, info generated")
+        
+        ArtFinderAPIClient.getArtist(with: artID) { (result) in
+            switch result {
+            case .failure(let apperror):
+                XCTFail("\(apperror)")
+            case .success(let artist):
+                XCTAssertEqual(link, artist.links?.selflink?.href, "\(link) should be the same as \(artist.links?.selflink?.href)")
+            }
         }
+        
+        
     }
-
 }

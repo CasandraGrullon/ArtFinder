@@ -11,6 +11,7 @@ import UIKit
 class ArtworksViewController: UIViewController {
 
     @IBOutlet weak var tableview: UITableView!
+    
     var artworks = [ArtworkArray]() {
         didSet {
             DispatchQueue.main.async {

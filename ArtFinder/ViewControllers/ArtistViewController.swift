@@ -17,55 +17,28 @@ class ArtistViewController: UIViewController {
     
     var searchResults: Results?
     var artistInfo: ArtistInfo?
-    var artworks: ArtworkArray?
+    var artwork: ArtworkArray?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadInfo(for: searchResults!, and: artistInfo?.id ?? "4d8b92944eb68a1b2c000264")
-        //loadArtistInfo(for: searchResults!, artID: artistInfo?.id ?? "5977a8a4a09a6770c614ad1a")
         navigationItem.title = artistInfo?.name
+        loadArtistInfo()
     }
     
-//    func loadArtistInfo(for searchResult: Results, artID: String) {
-//        if searchResult.links?.selflink?.href == "https://api.artsy.net/api/artists/\(artID)" {
-//            ArtFinderAPIClient.getArtist(with: artID) { [weak self] (result) in
-//                switch result{
-//                case .failure(let artistError):
-//                    DispatchQueue.main.async {
-//                        self?.showAlert(title: "Artist Error", message: "\(artistError)")
-//                    }
-//                case .success(let artist):
-//                    self?.artistInfo = artist
-//                    DispatchQueue.main.async {
-//                        self?.yearsAliveLabel.text = "\(artist.birthday ?? "") - \(artist.deathday ?? "")"
-//                        self?.nationalityLabel.text = artist.nationality
-//                        self?.artistBio.text = artist.biography
-//                        self?.artistImage.getImage(with: artist.links?.image?.href ?? "", completion: { (result) in
-//                            switch result {
-//                            case .failure:
-//                                self?.artistImage.image = UIImage(systemName: "person")
-//                            case .success(let image):
-//                                self?.artistImage.image = image
-//                            }
-//                        })
-//                    }
-//                }
-//            }
-//        }
-//    }
-
-    func loadInfo(for searchLink: Results, and artID: String) {
-        ArtFinderAPIClient.getArtistFromSearch(for: searchLink, with: artID) { [weak self] (result) in
+    func loadArtistInfo() {
+        let link = searchResults?.links?.selflink?.href?.components(separatedBy: "/")
+        let artID = link?.last ?? ""
+        ArtFinderAPIClient.getArtist(with: artID) { [weak self] (result) in
             switch result {
-            case .failure(let gafsError):
-                print(gafsError)
-            case .success(let artInfo):
-                self?.artistInfo = artInfo
+            case .failure(let artistError):
+                print(artistError)
+            case .success(let artist):
+                self?.artistInfo = artist
                 DispatchQueue.main.async {
-                    self?.artistBio.text = artInfo.biography
-                    self?.nationalityLabel.text = artInfo.nationality
-                    self?.yearsAliveLabel.text = "\(artInfo.birthday ?? "1993") - \(artInfo.deathday ?? "2089")"
-                    self?.artistImage.getImage(with: artInfo.links?.image?.href ?? "", completion: { (result) in
+                    self?.artistBio.text = artist.biography
+                    self?.yearsAliveLabel.text = "\(artist.birthday ?? "1993") - \(artist.deathday ?? "1993")"
+                    self?.nationalityLabel.text = artist.nationality
+                    self?.artistImage.getImage(with: artist.links?.image?.href ?? "", completion: { (result) in
                         switch result {
                         case .failure:
                             self?.artistImage.image = UIImage(systemName: "person")
@@ -79,11 +52,12 @@ class ArtistViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let artworkDetails = segue.destination as? ArtworkDetailViewController else {
-            fatalError("issue in artist to artwork segue")
+        guard let artworksVC = segue.destination as? ArtworksViewController else {
+            fatalError("segue issue on artworks button")
         }
-        artworkDetails.artwork = artworks
+        artworksVC.artworks = [artwork!]
     }
+    
 }
 
 

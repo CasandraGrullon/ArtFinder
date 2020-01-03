@@ -14,7 +14,6 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     var artist: ArtistInfo?
-    
     var artistResults = [Results]() {
         didSet{
             DispatchQueue.main.async {
@@ -44,6 +43,19 @@ class SearchViewController: UIViewController {
                 self?.artistResults = artist.filter{$0.type == "artist"}
             }
         }
+        
+    }
+    func loadArtist(){
+        let link = artistResults.first?.links?.selflink?.href?.components(separatedBy: "/")
+        let artID = link?.last ?? ""
+        ArtFinderAPIClient.getArtist(with: artID) { (result) in
+            switch result{
+            case .failure(let artistError):
+                print(artistError)
+            case .success(let artInfo):
+                self.artist = artInfo
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -51,6 +63,7 @@ class SearchViewController: UIViewController {
             fatalError("issues in segue")
         }
             artistVC.searchResults = artistResults[indexPath.row]
+        artistVC.artistInfo = artist
     }
 }
 
