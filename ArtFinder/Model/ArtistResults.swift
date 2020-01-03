@@ -30,11 +30,11 @@ struct Results: Codable {
     }
 }
 struct Links: Codable {
-    let artistLink: ArtistLink?
+    let selflink: ArtistLink?
     let thumbnail: Thumbnail?
     
     enum CodingKeys: String, CodingKey {
-        case artistLink = "self"
+        case selflink = "self"
         case thumbnail
     }
 }

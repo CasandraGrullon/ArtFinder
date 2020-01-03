@@ -21,41 +21,61 @@ class ArtistViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if searchResults?.links?.artistLink?.href == artistInfo?.links?.linkToApi?.href {
-            loadArtistInfo()
-        }
+        loadInfo(for: searchResults!, and: artistInfo?.id ?? "4d8b92944eb68a1b2c000264")
+        //loadArtistInfo(for: searchResults!, artID: artistInfo?.id ?? "5977a8a4a09a6770c614ad1a")
         navigationItem.title = artistInfo?.name
     }
     
-    func loadArtistInfo() {
-        ArtFinderAPIClient.getArtist(with: artistInfo?.id ?? "4d8b92944eb68a1b2c000264") { [weak self] (result) in
-            switch result{
-            case .failure(let artistError):
-                DispatchQueue.main.async {
-                    self?.showAlert(title: "Artist Error", message: "\(artistError)")
-                }
-            case .success(let artist):
-                self?.artistInfo = artist
-                DispatchQueue.main.async {
-                    self?.yearsAliveLabel.text = "\(artist.birthday ?? "") - \(artist.deathday ?? "")"
-                    self?.nationalityLabel.text = artist.nationality
-                    self?.artistBio.text = artist.biography
-                }
-            }
-        }
-        artistImage.getImage(with: artistInfo?.links?.mediumImage?.href ?? "https://d32dm0rphc51dk.cloudfront.net/wMhDVMZP68ERKRVE_c1k-g/{image_version}.jpg") { [weak self] (result) in
+//    func loadArtistInfo(for searchResult: Results, artID: String) {
+//        if searchResult.links?.selflink?.href == "https://api.artsy.net/api/artists/\(artID)" {
+//            ArtFinderAPIClient.getArtist(with: artID) { [weak self] (result) in
+//                switch result{
+//                case .failure(let artistError):
+//                    DispatchQueue.main.async {
+//                        self?.showAlert(title: "Artist Error", message: "\(artistError)")
+//                    }
+//                case .success(let artist):
+//                    self?.artistInfo = artist
+//                    DispatchQueue.main.async {
+//                        self?.yearsAliveLabel.text = "\(artist.birthday ?? "") - \(artist.deathday ?? "")"
+//                        self?.nationalityLabel.text = artist.nationality
+//                        self?.artistBio.text = artist.biography
+//                        self?.artistImage.getImage(with: artist.links?.image?.href ?? "", completion: { (result) in
+//                            switch result {
+//                            case .failure:
+//                                self?.artistImage.image = UIImage(systemName: "person")
+//                            case .success(let image):
+//                                self?.artistImage.image = image
+//                            }
+//                        })
+//                    }
+//                }
+//            }
+//        }
+//    }
+
+    func loadInfo(for searchLink: Results, and artID: String) {
+        ArtFinderAPIClient.getArtistFromSearch(for: searchLink, with: artID) { [weak self] (result) in
             switch result {
-            case .failure:
+            case .failure(let gafsError):
+                print(gafsError)
+            case .success(let artInfo):
+                self?.artistInfo = artInfo
                 DispatchQueue.main.async {
-                    self?.artistImage.image = UIImage(systemName: "person")
-                }
-            case .success(let image):
-                DispatchQueue.main.async {
-                    self?.artistImage.image = image
+                    self?.artistBio.text = artInfo.biography
+                    self?.nationalityLabel.text = artInfo.nationality
+                    self?.yearsAliveLabel.text = "\(artInfo.birthday ?? "1993") - \(artInfo.deathday ?? "2089")"
+                    self?.artistImage.getImage(with: artInfo.links?.image?.href ?? "", completion: { (result) in
+                        switch result {
+                        case .failure:
+                            self?.artistImage.image = UIImage(systemName: "person")
+                        case .success(let image):
+                            self?.artistImage.image = image
+                        }
+                    })
                 }
             }
         }
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -66,22 +86,5 @@ class ArtistViewController: UIViewController {
     }
 }
 
-//extension ArtistViewController: UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return artworks.count
-//    }
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "artistCell", for: indexPath) as? ArtistCell else {
-//            fatalError("issue in cell")
-//        }
-//        let art = artworks[indexPath.row]
-//        cell.configureCell(for: art)
-//        return cell
-//    }
-//}
-//extension ArtistViewController: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 180
-//    }
-//}
+
 

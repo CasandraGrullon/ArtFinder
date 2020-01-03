@@ -152,10 +152,10 @@
             </objects>
             <point key="canvasLocation" x="1918.840579710145" y="114.50892857142857"/>
         </scene>
-        <!--View Controller-->
+        <!--Artworks View Controller-->
         <scene sceneID="mtT-SE-VG9">
             <objects>
-                <viewController id="Mte-AU-9yC" sceneMemberID="viewController">
+                <viewController id="Mte-AU-9yC" customClass="ArtworksViewController" customModule="ArtFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qyj-lz-XGO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -222,6 +222,9 @@
                         <viewLayoutGuide key="safeArea" id="i0H-ig-bHs"/>
                     </view>
                     <navigationItem key="navigationItem" id="uuI-hp-ExH"/>
+                    <connections>
+                        <outlet property="tableview" destination="WYq-HP-S54" id="VVM-e7-43A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tw6-JF-XMR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

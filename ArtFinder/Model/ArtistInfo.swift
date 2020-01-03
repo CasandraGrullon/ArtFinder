@@ -16,18 +16,28 @@ struct ArtistInfo: Codable {
     let birthday: String?
     let deathday: String?
     let nationality: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case links = "_links"
+        case biography
+        case birthday
+        case deathday
+        case nationality
+    }
 }
 struct Link: Codable {
     let thumbnail: Small?
-    let mediumImage: MediumImage?
+    let image: MediumImage?
+    var selflink: Permalink?
     let artworks: Artworks?
-    var linkToApi: LinktoApi?
-    
-    enum CodingKeys: String, CodingKey{
+
+    enum CodingKeys: String, CodingKey {
         case thumbnail
-        case mediumImage = "image"
+        case image
+        case selflink = "self"
         case artworks
-        case linkToApi = "self"
     }
 }
 struct Small: Codable {
@@ -39,6 +49,6 @@ struct MediumImage: Codable {
 struct Artworks: Codable {
     let href: String?
 }
-struct LinktoApi: Codable {
+struct Permalink: Codable {
     var href: String?
 }

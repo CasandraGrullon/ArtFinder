@@ -21,7 +21,6 @@ class ArtworkDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         updateUI()
         navigationItem.title = artwork?.title
     }
@@ -35,6 +34,18 @@ class ArtworkDetailViewController: UIViewController {
         dateLabel.text = art.date
         dimensionsLabel.text = art.dimensions?.inches?.text
         locationLabel.text = "Currently displayed at \(art.location ?? "Not Available")"
+        artImage.getImage(with: art.imageLinks?.largeImage?.href ?? "") { [weak self] (result) in
+            switch result {
+            case .failure:
+                DispatchQueue.main.async {
+                    self?.artImage.image = UIImage(systemName: "paintbrush")
+                }
+            case .success(let image):
+                DispatchQueue.main.async {
+                    self?.artImage.image = image
+                }
+            }
+        }
         
     }
 
