@@ -17,7 +17,7 @@ class ArtworkDetailViewController: UIViewController {
     @IBOutlet weak var dimensionsLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     
-    var artwork: ArtworkArray?
+    var artwork: Artworks?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ class ArtworkDetailViewController: UIViewController {
         dateLabel.text = art.date
         dimensionsLabel.text = art.dimensions?.inches?.text
         locationLabel.text = "Currently displayed at \(art.location ?? "Not Available")"
-        artImage.getImage(with: art.imageLinks?.largeImage?.href ?? "") { [weak self] (result) in
+        artImage.getImage(with: art.imageLinks?.permalink?.href ?? "") { [weak self] (result) in
             switch result {
             case .failure:
                 DispatchQueue.main.async {

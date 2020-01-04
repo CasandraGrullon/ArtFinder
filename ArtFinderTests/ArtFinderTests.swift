@@ -15,8 +15,6 @@ class ArtFinderTests: XCTestCase {
     func testGetArtists(){
         let artID = "4d8b92684eb68a1b2c00009e"
         let link = "https://api.artsy.net/api/artists/\(artID)"
-
-        let exp = XCTestExpectation(description: "artist found, info generated")
         
         ArtFinderAPIClient.getArtist(with: artID) { (result) in
             switch result {
@@ -26,7 +24,18 @@ class ArtFinderTests: XCTestCase {
                 XCTAssertEqual(link, artist.links?.selflink?.href, "\(link) should be the same as \(artist.links?.selflink?.href)")
             }
         }
-        
-        
+    }
+    
+    func testGetArtworks(){
+        let artID = "4d8b92944eb68a1b2c000264"
+                
+        ArtFinderAPIClient.getArtworks(with: artID) { (result) in
+            switch result {
+            case .failure(let error):
+                XCTFail("\(error)")
+            case .success:
+                XCTAssertNotNil(true)
+            }
+        }
     }
 }

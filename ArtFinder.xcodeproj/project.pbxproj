@@ -155,8 +155,8 @@
 				C635D94B23B7D2CF00E97F84 /* SearchViewController.swift */,
 				C6597E0C23BAA41F00F2F48B /* SearchCell.swift */,
 				C6141BAF23BBBE53002D576B /* ArtistViewController.swift */,
-				C6141BB123BBC34E002D576B /* ArtistCell.swift */,
 				C649B64423BFB3DC0006B6A8 /* ArtworksViewController.swift */,
+				C6141BB123BBC34E002D576B /* ArtistCell.swift */,
 				C6141BB323BBD492002D576B /* ArtworkDetailViewController.swift */,
 			);
 			path = ViewControllers;

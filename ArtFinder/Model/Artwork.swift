@@ -8,18 +8,18 @@
 
 import Foundation
 
-struct Artwork: Codable {
-    let embed: Embed?
-    
-    enum CodingKeys: String, CodingKey {
-        case embed = "_embedded"
-    }
-}
+//struct Artwork: Codable {
+//    let embed: Embed
+//    
+//    enum CodingKeys: String, CodingKey {
+//        case embed = "_embedded"
+//    }
+//}
 struct Embed: Codable {
-    let artworks: [ArtworkArray]
+    let artworks: [Artworks]
 }
 
-struct ArtworkArray: Codable {
+struct Artworks: Codable {
     let id: String?
     let title: String?
     let category: String?
@@ -52,7 +52,7 @@ struct Inches: Codable {
 }
 struct ImageLinks: Codable {
     let thumbnail: Thumb?
-    let largeImage: LargeImage?
+    let permalink: LargeImage?
 }
 struct Thumb: Codable {
     let href: String?

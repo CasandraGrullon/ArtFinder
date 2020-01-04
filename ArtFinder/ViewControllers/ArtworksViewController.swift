@@ -10,27 +10,32 @@ import UIKit
 
 class ArtworksViewController: UIViewController {
 
-    @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var artworkTableview: UITableView!
     
     var artist: ArtistInfo?
     
-    var artworks = [ArtworkArray](){
+    var artworks = [Artworks](){
         didSet{
             DispatchQueue.main.async {
-            self.tableview.reloadData()
+                self.artworkTableview.reloadData()
             }
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadArtworks(for: artist?.id ?? "")
-        tableview.dataSource = self
-        tableview.delegate = self
+        loadArtworks()
+        dump(artworks)
+        artworkTableview.dataSource = self
+        artworkTableview.delegate = self
+        navigationItem.title = artist?.name
     }
     
-
-    func loadArtworks(for artist: String){
-        ArtFinderAPIClient.getArtworks(with: artist) { [weak self] (result) in
+    func loadArtworks() {
+        guard let id = artist?.id else {
+            return
+        }
+        ArtFinderAPIClient.getArtworks(with: id) { [weak self] (result) in
             switch result {
             case .failure(let arterror):
                 print(arterror)
@@ -39,23 +44,24 @@ class ArtworksViewController: UIViewController {
             }
         }
     }
-
 }
 extension ArtworksViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return artworks.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "artistCell", for: indexPath) as? ArtistCell else {
-            fatalError("issue in cell")
+        guard let cell = artworkTableview.dequeueReusableCell(withIdentifier: "artistCell", for: indexPath) as? ArtistCell else {
+            fatalError("issue with artist cell")
         }
         let art = artworks[indexPath.row]
         cell.configureCell(for: art)
         return cell
     }
 }
+
 extension ArtworksViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 180
+        return 200
     }
 }

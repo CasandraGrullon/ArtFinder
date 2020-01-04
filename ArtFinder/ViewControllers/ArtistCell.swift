@@ -14,9 +14,9 @@ class ArtistCell: UITableViewCell {
     @IBOutlet weak var artworkTitle: UILabel!
     @IBOutlet weak var artworkDateLabel: UILabel!
     
-    var artwork: ArtworkArray?
+    var artwork: Artworks?
     
-    func configureCell(for art: ArtworkArray) {
+    func configureCell(for art: Artworks) {
         artworkTitle.text = art.title
         artworkDateLabel.text = art.date
         artworkImage.getImage(with: art.imageLinks?.thumbnail?.href ?? "" ) { [weak self] (result) in
