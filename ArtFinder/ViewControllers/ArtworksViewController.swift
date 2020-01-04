@@ -14,7 +14,7 @@ class ArtworksViewController: UIViewController {
     
     var artist: ArtistInfo?
     
-    var artworks = [Artworks](){
+    var artworks = [Artwork]() {
         didSet{
             DispatchQueue.main.async {
                 self.artworkTableview.reloadData()
@@ -24,27 +24,25 @@ class ArtworksViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadArtworks()
+        loadArtworks(for: artist!)
         dump(artworks)
         artworkTableview.dataSource = self
         artworkTableview.delegate = self
         navigationItem.title = artist?.name
     }
     
-    func loadArtworks() {
-        guard let id = artist?.id else {
-            return
-        }
-        ArtFinderAPIClient.getArtworks(with: id) { [weak self] (result) in
+    func loadArtworks(for artist: ArtistInfo) {
+        ArtFinderAPIClient.getArtworks(with: artist.id ?? "4d8b92684eb68a1b2c00009e") { [weak self] (result) in
             switch result {
             case .failure(let arterror):
                 print(arterror)
             case .success(let artworkslist):
-                self?.artworks = [artworkslist]
+                self?.artworks = artworkslist
+            }
         }
     }
 }
-}
+
 extension ArtworksViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return artworks.count

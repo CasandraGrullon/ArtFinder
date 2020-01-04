@@ -17,7 +17,7 @@ class ArtworkDetailViewController: UIViewController {
     @IBOutlet weak var dimensionsLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     
-    var artwork: Artworks?
+    var artwork: Artwork?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,15 +26,12 @@ class ArtworkDetailViewController: UIViewController {
     }
 
     func updateUI() {
-        guard let art = artwork else {
-            return
-        }
-        categoryLabel.text = art.category
-        mediumLabel.text = art.medium
-        dateLabel.text = art.date
-        dimensionsLabel.text = art.dimensions?.inches?.text
-        locationLabel.text = "Currently displayed at \(art.location ?? "Not Available")"
-        artImage.getImage(with: art.imageLinks?.permalink?.href ?? "") { [weak self] (result) in
+        categoryLabel.text = artwork?.category
+        mediumLabel.text = artwork?.medium
+        dateLabel.text = artwork?.date
+        dimensionsLabel.text = artwork?.dimensions.dimensions.text
+        locationLabel.text = "Currently displayed at \(artwork?.collectingInstitution)"
+        artImage.getImage(with: artwork?.links.image.href ?? "") { [weak self] (result) in
             switch result {
             case .failure:
                 DispatchQueue.main.async {

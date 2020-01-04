@@ -13,7 +13,6 @@ class ArtistViewController: UIViewController {
     @IBOutlet weak var artistImage: UIImageView!
     @IBOutlet weak var yearsAliveLabel: UILabel!
     @IBOutlet weak var nationalityLabel: UILabel!
-    
     @IBOutlet weak var artistBio: UITextView!
     
     var searchResults: Results?
@@ -21,7 +20,6 @@ class ArtistViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = artistInfo?.name
         loadArtistInfo(for: searchResults!)
         navigationItem.title = searchResults?.title
     }
@@ -56,6 +54,7 @@ class ArtistViewController: UIViewController {
             }
         }
     }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let artworksVC = segue.destination as? ArtworksViewController else {

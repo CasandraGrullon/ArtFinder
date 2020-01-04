@@ -14,12 +14,12 @@ class ArtistCell: UITableViewCell {
     @IBOutlet weak var artworkTitle: UILabel!
     @IBOutlet weak var artworkDateLabel: UILabel!
     
-    var artwork: Artworks?
+    var artwork: Artwork?
     
-    func configureCell(for art: Artworks) {
+    func configureCell(for art: Artwork) {
         artworkTitle.text = art.title
         artworkDateLabel.text = art.date
-        artworkImage.getImage(with: art.imageLinks?.thumbnail?.href ?? "https://d32dm0rphc51dk.cloudfront.net/5L1xjKC_und1uiKCpUPHhw/medium.jpg" ) { [weak self] (result) in
+        artworkImage.getImage(with: art.links.thumbnail.href) { [weak self] (result) in
             switch result {
             case .failure:
                 DispatchQueue.main.async {
