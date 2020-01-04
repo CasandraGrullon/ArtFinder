@@ -28,14 +28,19 @@ class ArtFinderTests: XCTestCase {
     
     func testGetArtworks(){
         let artID = "4d8b92944eb68a1b2c000264"
+        
+        let exp = XCTestExpectation(description: "data should return more than 0 artworks")
                 
         ArtFinderAPIClient.getArtworks(with: artID) { (result) in
             switch result {
             case .failure(let error):
                 XCTFail("\(error)")
-            case .success:
-                XCTAssertNotNil(true)
+            case .success(let data):
+                exp.fulfill()
+                XCTAssertNil(false, "\(data) is not empty")
             }
         }
+        wait(for: [exp], timeout: 5.0)
+        
     }
 }

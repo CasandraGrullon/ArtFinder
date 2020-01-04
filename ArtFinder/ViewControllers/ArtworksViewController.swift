@@ -37,7 +37,7 @@ class ArtworksViewController: UIViewController {
             case .failure(let arterror):
                 print(arterror)
             case .success(let artworkslist):
-                self?.artworks = artworkslist
+                self?.artworks = [artworkslist]
             }
         }
     }
