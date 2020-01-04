@@ -16,7 +16,7 @@ import Foundation
 //    }
 //}
 struct Embed: Codable {
-    let artworks: [Artworks]
+    let artworks: Artworks
 }
 
 struct Artworks: Codable {

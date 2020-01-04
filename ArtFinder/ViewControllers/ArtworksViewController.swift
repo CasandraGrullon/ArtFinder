@@ -9,7 +9,7 @@
 import UIKit
 
 class ArtworksViewController: UIViewController {
-
+    
     @IBOutlet weak var artworkTableview: UITableView!
     
     var artist: ArtistInfo?
@@ -40,10 +40,10 @@ class ArtworksViewController: UIViewController {
             case .failure(let arterror):
                 print(arterror)
             case .success(let artworkslist):
-                self?.artworks = artworkslist
-            }
+                self?.artworks = [artworkslist]
         }
     }
+}
 }
 extension ArtworksViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

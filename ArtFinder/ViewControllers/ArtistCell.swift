@@ -19,7 +19,7 @@ class ArtistCell: UITableViewCell {
     func configureCell(for art: Artworks) {
         artworkTitle.text = art.title
         artworkDateLabel.text = art.date
-        artworkImage.getImage(with: art.imageLinks?.thumbnail?.href ?? "" ) { [weak self] (result) in
+        artworkImage.getImage(with: art.imageLinks?.thumbnail?.href ?? "https://d32dm0rphc51dk.cloudfront.net/5L1xjKC_und1uiKCpUPHhw/medium.jpg" ) { [weak self] (result) in
             switch result {
             case .failure:
                 DispatchQueue.main.async {
