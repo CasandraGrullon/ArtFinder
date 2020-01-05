@@ -17,6 +17,7 @@ class ArtistViewController: UIViewController {
     
     var searchResults: Results?
     var artistInfo: ArtistInfo?
+    var artworks: Artwork?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +55,6 @@ class ArtistViewController: UIViewController {
             }
         }
     }
-
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let artworksVC = segue.destination as? ArtworksViewController else {

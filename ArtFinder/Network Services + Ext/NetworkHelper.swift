@@ -22,6 +22,7 @@ class NetworkHelper {
 
     let dataTask = session.dataTask(with: request) { (data, response, error) in
 
+        
       if let error = error {
         completion(.failure(.networkClientError(error)))
         return

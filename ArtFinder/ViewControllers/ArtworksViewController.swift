@@ -24,10 +24,9 @@ class ArtworksViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadArtworks(for: artist!)
-        dump(artworks)
         artworkTableview.dataSource = self
         artworkTableview.delegate = self
+        loadArtworks(for: artist!)
         navigationItem.title = artist?.name
     }
     
@@ -37,7 +36,7 @@ class ArtworksViewController: UIViewController {
             case .failure(let arterror):
                 print(arterror)
             case .success(let artworkslist):
-                self?.artworks = [artworkslist]
+                self?.artworks = artworkslist.artworks!
             }
         }
     }

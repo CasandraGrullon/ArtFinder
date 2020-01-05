@@ -63,16 +63,16 @@ struct ArtFinderAPIClient {
                 do{
                     let artistResults = try JSONDecoder().decode(ArtistInfo.self, from: data)
                     completion(.success(artistResults))
-                }catch {
+                } catch {
                     completion(.failure(.decodingError(error)))
                 }
             }
         }
     }
     
-    static func getArtworks(with artID: String, completion: @escaping (Result<Artwork, AppError>) -> ()) {
+    static func getArtworks(with artID: String, completion: @escaping (Result<Embed, AppError>) -> ()) {
         
-        let endpointURL = "https://api.artsy.net/api/artworks?artist_id=\(artID)&size=10"
+        let endpointURL = "https://api.artsy.net/api/artworks?artist_id=\(artID)"
         
         guard let url = URL(string: endpointURL) else {
             completion(.failure(.badURL(endpointURL)))
@@ -88,8 +88,8 @@ struct ArtFinderAPIClient {
                 completion(.failure(.networkClientError(appError)))
             case .success(let data):
                 do{
-                    let artworkResults = try JSONDecoder().decode(Artwork.self, from: data)
-                    completion(.success(artworkResults))
+                    let artworkResults = try JSONDecoder().decode(Art.self, from: data)
+                    completion(.success(artworkResults.embedded))
                 } catch {
                     completion(.failure(.decodingError(error)))
                 }
