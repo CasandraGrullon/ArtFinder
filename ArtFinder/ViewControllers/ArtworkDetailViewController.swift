@@ -30,7 +30,7 @@ class ArtworkDetailViewController: UIViewController {
         mediumLabel.text = artwork?.medium
         dateLabel.text = artwork?.date
         dimensionsLabel.text = artwork?.dimensions?.dimensions?.text
-        locationLabel.text = "Currently displayed at \(artwork?.collectingInstitution ?? "")"
+        locationLabel.text = "\(artwork?.collectingInstitution ?? "currently not displayed anywhere")"
         artImage.getImage(with: artwork?.links?.thumbnail?.href ?? "") { [weak self] (result) in
             switch result {
             case .failure:

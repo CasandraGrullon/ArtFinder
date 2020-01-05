@@ -243,57 +243,116 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AbL-eN-TjM">
                                 <rect key="frame" x="0.0" y="88" width="414" height="448"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="category" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95J-fs-rRR">
-                                <rect key="frame" x="8" y="544" width="398" height="20.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Located" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiT-pL-9Ga">
+                                <rect key="frame" x="20" y="546" width="65.5" height="25.5"/>
+                                <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="medium" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbm-tJ-IeJ">
-                                <rect key="frame" x="8" y="572.5" width="398" height="20.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0V-OC-Dwy">
+                                <rect key="frame" x="156" y="547" width="250" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="JEq-Wb-UPA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorGujarati-Regular" family="Kohinoor Gujarati" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oie-3z-4kO">
-                                <rect key="frame" x="8" y="601" width="398" height="20.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSj-Cc-Jjz">
+                                <rect key="frame" x="20" y="581.5" width="386" height="25.5"/>
+                                <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dimensions" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Lv-uI-3UH">
-                                <rect key="frame" x="8" y="629.5" width="398" height="20.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayf-Zj-4jO">
+                                <rect key="frame" x="20" y="617" width="88" height="26"/>
+                                <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWp-h1-omw">
-                                <rect key="frame" x="8" y="658" width="398" height="20.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIf-hg-6gN">
+                                <rect key="frame" x="20" y="651" width="74" height="26"/>
+                                <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="category" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfX-vj-wEg">
+                                <rect key="frame" x="156" y="654.5" width="250" height="19.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="8th-ml-rpl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medium" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGL-uo-Xc1">
+                                <rect key="frame" x="20" y="685" width="64.5" height="26"/>
+                                <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="medium" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsa-Gz-HJc">
+                                <rect key="frame" x="156" y="686" width="250" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="bAK-rX-1vA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorGujarati-Regular" family="Kohinoor Gujarati" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tP-pt-H9A">
+                                <rect key="frame" x="20" y="719" width="34.5" height="26"/>
+                                <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dimensions" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ezf-oh-Y8Q">
+                                <rect key="frame" x="156" y="720" width="250" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="rAi-tr-CK4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorGujarati-Regular" family="Kohinoor Gujarati" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dates" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Qq-t1-BUV">
+                                <rect key="frame" x="156" y="618" width="250" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="i5h-yX-YWu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorGujarati-Regular" family="Kohinoor Gujarati" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="StP-Ag-COF" firstAttribute="trailing" secondItem="BWp-h1-omw" secondAttribute="trailing" constant="8" id="1oT-S4-oW8"/>
-                            <constraint firstItem="StP-Ag-COF" firstAttribute="trailing" secondItem="Xbm-tJ-IeJ" secondAttribute="trailing" constant="8" id="Ege-OT-hO6"/>
-                            <constraint firstItem="Xbm-tJ-IeJ" firstAttribute="leading" secondItem="StP-Ag-COF" secondAttribute="leading" constant="8" id="Hh1-oW-6nG"/>
-                            <constraint firstItem="7Lv-uI-3UH" firstAttribute="top" secondItem="oie-3z-4kO" secondAttribute="bottom" constant="8" id="ILp-7X-Ln7"/>
-                            <constraint firstItem="oie-3z-4kO" firstAttribute="leading" secondItem="StP-Ag-COF" secondAttribute="leading" constant="8" id="J7H-rS-9V4"/>
-                            <constraint firstItem="StP-Ag-COF" firstAttribute="trailing" secondItem="7Lv-uI-3UH" secondAttribute="trailing" constant="8" id="LiT-D0-m7L"/>
-                            <constraint firstItem="95J-fs-rRR" firstAttribute="leading" secondItem="StP-Ag-COF" secondAttribute="leading" constant="8" id="MdW-iT-6hM"/>
-                            <constraint firstItem="95J-fs-rRR" firstAttribute="top" secondItem="AbL-eN-TjM" secondAttribute="bottom" constant="8" id="OaW-GR-VUO"/>
-                            <constraint firstItem="Xbm-tJ-IeJ" firstAttribute="top" secondItem="95J-fs-rRR" secondAttribute="bottom" constant="8" id="PUl-WV-lKw"/>
-                            <constraint firstItem="oie-3z-4kO" firstAttribute="top" secondItem="Xbm-tJ-IeJ" secondAttribute="bottom" constant="8" id="VgI-Il-WKa"/>
-                            <constraint firstItem="StP-Ag-COF" firstAttribute="trailing" secondItem="oie-3z-4kO" secondAttribute="trailing" constant="8" id="XZK-6V-zcS"/>
-                            <constraint firstItem="BWp-h1-omw" firstAttribute="leading" secondItem="StP-Ag-COF" secondAttribute="leading" constant="8" id="fT7-3Z-rOd"/>
-                            <constraint firstItem="7Lv-uI-3UH" firstAttribute="leading" secondItem="StP-Ag-COF" secondAttribute="leading" constant="8" id="fcn-Ol-BnZ"/>
-                            <constraint firstItem="BWp-h1-omw" firstAttribute="top" secondItem="7Lv-uI-3UH" secondAttribute="bottom" constant="8" id="fnW-9Z-VJV"/>
+                            <constraint firstItem="SiT-pL-9Ga" firstAttribute="top" secondItem="AbL-eN-TjM" secondAttribute="bottom" constant="10" id="13Z-xN-ObI"/>
+                            <constraint firstItem="SiT-pL-9Ga" firstAttribute="leading" secondItem="StP-Ag-COF" secondAttribute="leading" constant="20" id="48K-Lk-dPw"/>
+                            <constraint firstItem="2Qq-t1-BUV" firstAttribute="centerY" secondItem="ayf-Zj-4jO" secondAttribute="centerY" id="4NK-mN-m9s"/>
+                            <constraint firstItem="NSj-Cc-Jjz" firstAttribute="top" secondItem="SiT-pL-9Ga" secondAttribute="bottom" constant="10" id="4gN-Fe-z1E"/>
+                            <constraint firstItem="8tP-pt-H9A" firstAttribute="leading" secondItem="StP-Ag-COF" secondAttribute="leading" constant="20" id="52C-LI-5w8"/>
+                            <constraint firstItem="StP-Ag-COF" firstAttribute="trailing" secondItem="zsa-Gz-HJc" secondAttribute="trailing" constant="8" id="6tc-Bf-j66"/>
+                            <constraint firstItem="ayf-Zj-4jO" firstAttribute="top" secondItem="NSj-Cc-Jjz" secondAttribute="bottom" constant="10" id="HmW-0h-XPr"/>
+                            <constraint firstItem="StP-Ag-COF" firstAttribute="trailing" secondItem="NSj-Cc-Jjz" secondAttribute="trailing" constant="8" id="J6L-Cd-ZFJ"/>
+                            <constraint firstItem="8tP-pt-H9A" firstAttribute="top" secondItem="lGL-uo-Xc1" secondAttribute="bottom" constant="8" id="JMM-YB-VZK"/>
+                            <constraint firstItem="NSj-Cc-Jjz" firstAttribute="leading" secondItem="StP-Ag-COF" secondAttribute="leading" constant="20" id="Lix-pY-9nG"/>
+                            <constraint firstItem="lGL-uo-Xc1" firstAttribute="leading" secondItem="StP-Ag-COF" secondAttribute="leading" constant="20" id="ShY-ng-iib"/>
+                            <constraint firstItem="lGL-uo-Xc1" firstAttribute="top" secondItem="xIf-hg-6gN" secondAttribute="bottom" constant="8" id="Us2-SB-Cln"/>
+                            <constraint firstItem="ayf-Zj-4jO" firstAttribute="leading" secondItem="StP-Ag-COF" secondAttribute="leading" constant="20" id="b4R-mX-eRT"/>
+                            <constraint firstItem="zsa-Gz-HJc" firstAttribute="centerY" secondItem="lGL-uo-Xc1" secondAttribute="centerY" id="eIR-RI-SCT"/>
                             <constraint firstItem="AbL-eN-TjM" firstAttribute="height" secondItem="kv2-LL-xNQ" secondAttribute="height" multiplier="0.5" id="glw-7Q-USZ"/>
+                            <constraint firstItem="xIf-hg-6gN" firstAttribute="top" secondItem="ayf-Zj-4jO" secondAttribute="bottom" constant="8" id="hKD-Rx-FRU"/>
                             <constraint firstItem="AbL-eN-TjM" firstAttribute="leading" secondItem="StP-Ag-COF" secondAttribute="leading" id="hey-TH-xFF"/>
+                            <constraint firstItem="xIf-hg-6gN" firstAttribute="leading" secondItem="StP-Ag-COF" secondAttribute="leading" constant="20" id="jwT-UE-VbY"/>
                             <constraint firstItem="StP-Ag-COF" firstAttribute="trailing" secondItem="AbL-eN-TjM" secondAttribute="trailing" id="kX9-yz-YHz"/>
-                            <constraint firstItem="StP-Ag-COF" firstAttribute="trailing" secondItem="95J-fs-rRR" secondAttribute="trailing" constant="8" id="sIr-Tr-abd"/>
+                            <constraint firstItem="StP-Ag-COF" firstAttribute="trailing" secondItem="H0V-OC-Dwy" secondAttribute="trailing" constant="8" id="nTl-bY-TGo"/>
+                            <constraint firstItem="sfX-vj-wEg" firstAttribute="centerY" secondItem="xIf-hg-6gN" secondAttribute="centerY" id="oqP-oz-XsV"/>
+                            <constraint firstItem="StP-Ag-COF" firstAttribute="trailing" secondItem="2Qq-t1-BUV" secondAttribute="trailing" constant="8" id="osb-q4-IbB"/>
+                            <constraint firstItem="Ezf-oh-Y8Q" firstAttribute="centerY" secondItem="8tP-pt-H9A" secondAttribute="centerY" id="qwI-h7-jVh"/>
+                            <constraint firstItem="H0V-OC-Dwy" firstAttribute="centerY" secondItem="SiT-pL-9Ga" secondAttribute="centerY" id="rN0-w3-3AW"/>
+                            <constraint firstItem="StP-Ag-COF" firstAttribute="trailing" secondItem="sfX-vj-wEg" secondAttribute="trailing" constant="8" id="sr9-6d-PjD"/>
+                            <constraint firstItem="StP-Ag-COF" firstAttribute="trailing" secondItem="Ezf-oh-Y8Q" secondAttribute="trailing" constant="8" id="v3z-jC-1n8"/>
                             <constraint firstItem="AbL-eN-TjM" firstAttribute="top" secondItem="StP-Ag-COF" secondAttribute="top" id="yeC-PQ-dnX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="StP-Ag-COF"/>
@@ -301,16 +360,16 @@
                     <navigationItem key="navigationItem" id="qmi-gA-YkP"/>
                     <connections>
                         <outlet property="artImage" destination="AbL-eN-TjM" id="Izs-bV-c9p"/>
-                        <outlet property="categoryLabel" destination="95J-fs-rRR" id="mWL-M8-93H"/>
-                        <outlet property="dateLabel" destination="oie-3z-4kO" id="vtL-eq-Pdz"/>
-                        <outlet property="dimensionsLabel" destination="7Lv-uI-3UH" id="7yh-tc-Loa"/>
-                        <outlet property="locationLabel" destination="BWp-h1-omw" id="xgb-Fg-zm0"/>
-                        <outlet property="mediumLabel" destination="Xbm-tJ-IeJ" id="3BM-uC-yaj"/>
+                        <outlet property="categoryLabel" destination="sfX-vj-wEg" id="n3q-Au-1J9"/>
+                        <outlet property="dateLabel" destination="2Qq-t1-BUV" id="wCG-Pd-sIw"/>
+                        <outlet property="dimensionsLabel" destination="Ezf-oh-Y8Q" id="vjq-sB-UOS"/>
+                        <outlet property="locationLabel" destination="H0V-OC-Dwy" id="dmb-ss-SI4"/>
+                        <outlet property="mediumLabel" destination="zsa-Gz-HJc" id="ur4-tF-L5Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cbe-dA-fQs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3271" y="116"/>
+            <point key="canvasLocation" x="3269.5652173913045" y="115.84821428571428"/>
         </scene>
         <!--Art Finder-->
         <scene sceneID="t0p-Iz-zTy">
