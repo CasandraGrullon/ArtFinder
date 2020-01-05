@@ -40,6 +40,12 @@ class ArtworksViewController: UIViewController {
             }
         }
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailVC = segue.destination as? ArtworkDetailViewController, let indexPath = artworkTableview.indexPathForSelectedRow else {
+            fatalError("issue in artwork segue")
+        }
+        detailVC.artwork = artworks[indexPath.row]
+    }
 }
 
 extension ArtworksViewController: UITableViewDataSource {

@@ -31,7 +31,7 @@ class ArtworkDetailViewController: UIViewController {
         dateLabel.text = artwork?.date
         dimensionsLabel.text = artwork?.dimensions?.dimensions?.text
         locationLabel.text = "Currently displayed at \(artwork?.collectingInstitution ?? "")"
-        artImage.getImage(with: artwork?.links?.image?.href ?? "") { [weak self] (result) in
+        artImage.getImage(with: artwork?.links?.thumbnail?.href ?? "") { [weak self] (result) in
             switch result {
             case .failure:
                 DispatchQueue.main.async {
