@@ -27,6 +27,7 @@
 		C635D97A23B8134A00E97F84 /* ArtFinderAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D97923B8134A00E97F84 /* ArtFinderAPIClient.swift */; };
 		C649B64523BFB3DC0006B6A8 /* ArtworksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C649B64423BFB3DC0006B6A8 /* ArtworksViewController.swift */; };
 		C6597E0D23BAA41F00F2F48B /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6597E0C23BAA41F00F2F48B /* SearchCell.swift */; };
+		C6ED949D23C37FB2003292E2 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED949C23C37FB2003292E2 /* Secrets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		C635D97923B8134A00E97F84 /* ArtFinderAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtFinderAPIClient.swift; sourceTree = "<group>"; };
 		C649B64423BFB3DC0006B6A8 /* ArtworksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworksViewController.swift; sourceTree = "<group>"; };
 		C6597E0C23BAA41F00F2F48B /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		C6ED949C23C37FB2003292E2 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				C635D96F23B8102400E97F84 /* Model */,
 				C635D97B23BAA20100E97F84 /* ViewControllers */,
 				C635D94D23B7D2CF00E97F84 /* Main.storyboard */,
+				C6ED949E23C37FEF003292E2 /* Secrets */,
 				C635D95023B7D2D300E97F84 /* Assets.xcassets */,
 				C635D95223B7D2D300E97F84 /* LaunchScreen.storyboard */,
 				C635D95523B7D2D300E97F84 /* Info.plist */,
@@ -160,6 +163,14 @@
 				C6141BB323BBD492002D576B /* ArtworkDetailViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C6ED949E23C37FEF003292E2 /* Secrets */ = {
+			isa = PBXGroup;
+			children = (
+				C6ED949C23C37FB2003292E2 /* Secrets.swift */,
+			);
+			path = Secrets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +279,7 @@
 				C6141BB423BBD492002D576B /* ArtworkDetailViewController.swift in Sources */,
 				C649B64523BFB3DC0006B6A8 /* ArtworksViewController.swift in Sources */,
 				C6141BB223BBC34E002D576B /* ArtistCell.swift in Sources */,
+				C6ED949D23C37FB2003292E2 /* Secrets.swift in Sources */,
 				C635D96E23B80E0700E97F84 /* Artwork.swift in Sources */,
 				C635D94C23B7D2CF00E97F84 /* SearchViewController.swift in Sources */,
 				C635D94823B7D2CF00E97F84 /* AppDelegate.swift in Sources */,
