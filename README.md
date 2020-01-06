@@ -11,10 +11,10 @@ When the app is first opened, there is an empty tableview that populates as the 
 
 
 Once the table cell is clicked, the view segues to an artist's page which displays the years they were alive, their nationality, a biography and a link to their list of artworks.
-![view2](screenshot2.png)
+![view2](Assests/screenshot2.png)
 
 The artworks list is presented in a tableview.
-![view3](screenshot3.png)
+![view3](Assests/screenshot3.png)
 
 By selected a table cell the view segues to a description of the artwork included where the art piece is currently displayed.
-![view4](screenshot4.png)
+![view4](Assests/screenshot4.png)
