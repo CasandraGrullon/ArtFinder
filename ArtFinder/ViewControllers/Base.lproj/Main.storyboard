@@ -357,13 +357,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="StP-Ag-COF"/>
                     </view>
-                    <navigationItem key="navigationItem" id="qmi-gA-YkP">
-                        <barButtonItem key="rightBarButtonItem" title="Museum" id="yot-Wm-0eh">
-                            <connections>
-                                <segue destination="wuo-cc-FSP" kind="show" id="DJZ-tt-EDM"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="qmi-gA-YkP"/>
                     <connections>
                         <outlet property="artImage" destination="AbL-eN-TjM" id="Izs-bV-c9p"/>
                         <outlet property="categoryLabel" destination="sfX-vj-wEg" id="n3q-Au-1J9"/>
@@ -376,22 +370,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cbe-dA-fQs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3269.5652173913045" y="115.84821428571428"/>
-        </scene>
-        <!--Museum Link View Controller-->
-        <scene sceneID="ss2-Ch-HId">
-            <objects>
-                <viewController id="wuo-cc-FSP" customClass="MuseumLinkViewController" customModule="ArtFinder" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="InP-b5-cCX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="ju8-Nn-JC3"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="RMx-gy-jOz"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rY3-qX-A50" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3941" y="117"/>
         </scene>
         <!--Art Finder-->
         <scene sceneID="t0p-Iz-zTy">
