@@ -3,7 +3,7 @@
 The ArtFinder app allows users to search for an artist, get a list of their artworks
 and details of the art pieces including where the artwork is currently displayed.
 
-ArtFinder was created using the Artsy API (search, artists, and artworks)
+ArtFinder was created using the [Artsy API](https://developers.artsy.net) (search, artists, and artworks)
 
 When the app is first opened, there is an empty tableview that populates as the viewer searches for an artist.
 ![view1](/Desktop/Screen Shot 2020-01-06 at 1.46.39 PM.png)
