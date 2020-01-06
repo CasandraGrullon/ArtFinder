@@ -92,16 +92,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9gD-Lt-I1z">
-                                <rect key="frame" x="0.0" y="140" width="414" height="358.5"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="358.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year Born to Year Died" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCx-qy-5mE">
-                                <rect key="frame" x="8" y="506.5" width="398" height="25.5"/>
+                                <rect key="frame" x="8" y="454.5" width="398" height="25.5"/>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Regular" family="Kohinoor Gujarati" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nationality" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pY9-Sk-xrB">
-                                <rect key="frame" x="8" y="540" width="398" height="25.5"/>
+                                <rect key="frame" x="8" y="488" width="398" height="25.5"/>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Regular" family="Kohinoor Gujarati" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -117,7 +117,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wiZ-B7-u6G">
-                                <rect key="frame" x="8" y="573.5" width="398" height="185.5"/>
+                                <rect key="frame" x="8" y="521.5" width="398" height="237.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Regular" family="Kohinoor Gujarati" pointSize="16"/>
@@ -243,17 +243,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AbL-eN-TjM">
-                                <rect key="frame" x="0.0" y="140" width="414" height="448"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AbL-eN-TjM">
+                                <rect key="frame" x="0.0" y="88" width="414" height="537.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Located" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiT-pL-9Ga">
-                                <rect key="frame" x="20" y="598" width="65.5" height="25.5"/>
+                                <rect key="frame" x="20" y="635.5" width="65.5" height="25.5"/>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0V-OC-Dwy">
-                                <rect key="frame" x="156" y="599" width="250" height="24"/>
+                                <rect key="frame" x="156" y="636.5" width="250" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="JEq-Wb-UPA"/>
                                 </constraints>
@@ -262,13 +262,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayf-Zj-4jO">
-                                <rect key="frame" x="20" y="643.5" width="88" height="26"/>
+                                <rect key="frame" x="20" y="669" width="88" height="26"/>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dates" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Qq-t1-BUV">
-                                <rect key="frame" x="156" y="644.5" width="250" height="24"/>
+                                <rect key="frame" x="156" y="670" width="250" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="i5h-yX-YWu"/>
                                 </constraints>
@@ -277,13 +277,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIf-hg-6gN">
-                                <rect key="frame" x="20" y="677.5" width="74" height="26"/>
+                                <rect key="frame" x="20" y="703" width="74" height="26"/>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="category" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfX-vj-wEg">
-                                <rect key="frame" x="156" y="681" width="250" height="19.5"/>
+                                <rect key="frame" x="156" y="706.5" width="250" height="19.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="8th-ml-rpl"/>
                                 </constraints>
@@ -292,13 +292,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medium" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGL-uo-Xc1">
-                                <rect key="frame" x="20" y="711.5" width="64.5" height="26"/>
+                                <rect key="frame" x="20" y="737" width="64.5" height="26"/>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="medium" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsa-Gz-HJc">
-                                <rect key="frame" x="156" y="712.5" width="250" height="24"/>
+                                <rect key="frame" x="156" y="738" width="250" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="bAK-rX-1vA"/>
                                 </constraints>
@@ -307,13 +307,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tP-pt-H9A">
-                                <rect key="frame" x="20" y="745.5" width="34.5" height="26"/>
+                                <rect key="frame" x="20" y="771" width="34.5" height="26"/>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dimensions" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ezf-oh-Y8Q">
-                                <rect key="frame" x="156" y="746.5" width="250" height="24"/>
+                                <rect key="frame" x="156" y="772" width="250" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="rAi-tr-CK4"/>
                                 </constraints>
@@ -329,13 +329,13 @@
                             <constraint firstItem="2Qq-t1-BUV" firstAttribute="centerY" secondItem="ayf-Zj-4jO" secondAttribute="centerY" id="4NK-mN-m9s"/>
                             <constraint firstItem="8tP-pt-H9A" firstAttribute="leading" secondItem="StP-Ag-COF" secondAttribute="leading" constant="20" id="52C-LI-5w8"/>
                             <constraint firstItem="StP-Ag-COF" firstAttribute="trailing" secondItem="zsa-Gz-HJc" secondAttribute="trailing" constant="8" id="6tc-Bf-j66"/>
-                            <constraint firstItem="ayf-Zj-4jO" firstAttribute="top" secondItem="SiT-pL-9Ga" secondAttribute="bottom" constant="20" id="DPl-Ie-LIv"/>
+                            <constraint firstItem="ayf-Zj-4jO" firstAttribute="top" secondItem="SiT-pL-9Ga" secondAttribute="bottom" constant="8" id="DPl-Ie-LIv"/>
                             <constraint firstItem="8tP-pt-H9A" firstAttribute="top" secondItem="lGL-uo-Xc1" secondAttribute="bottom" constant="8" id="JMM-YB-VZK"/>
                             <constraint firstItem="lGL-uo-Xc1" firstAttribute="leading" secondItem="StP-Ag-COF" secondAttribute="leading" constant="20" id="ShY-ng-iib"/>
                             <constraint firstItem="lGL-uo-Xc1" firstAttribute="top" secondItem="xIf-hg-6gN" secondAttribute="bottom" constant="8" id="Us2-SB-Cln"/>
                             <constraint firstItem="ayf-Zj-4jO" firstAttribute="leading" secondItem="StP-Ag-COF" secondAttribute="leading" constant="20" id="b4R-mX-eRT"/>
                             <constraint firstItem="zsa-Gz-HJc" firstAttribute="centerY" secondItem="lGL-uo-Xc1" secondAttribute="centerY" id="eIR-RI-SCT"/>
-                            <constraint firstItem="AbL-eN-TjM" firstAttribute="height" secondItem="kv2-LL-xNQ" secondAttribute="height" multiplier="0.5" id="glw-7Q-USZ"/>
+                            <constraint firstItem="AbL-eN-TjM" firstAttribute="height" secondItem="kv2-LL-xNQ" secondAttribute="height" multiplier="0.6" id="glw-7Q-USZ"/>
                             <constraint firstItem="xIf-hg-6gN" firstAttribute="top" secondItem="ayf-Zj-4jO" secondAttribute="bottom" constant="8" id="hKD-Rx-FRU"/>
                             <constraint firstItem="AbL-eN-TjM" firstAttribute="leading" secondItem="StP-Ag-COF" secondAttribute="leading" id="hey-TH-xFF"/>
                             <constraint firstItem="xIf-hg-6gN" firstAttribute="leading" secondItem="StP-Ag-COF" secondAttribute="leading" constant="20" id="jwT-UE-VbY"/>
@@ -371,8 +371,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vqX-Vh-hct" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Art Finder" image="magnifyingglass" catalog="system" id="us3-sC-fUb"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="iAs-vb-xkU">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iAs-vb-xkU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.028775780269999999" green="0.0" blue="0.78852712560000005" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
