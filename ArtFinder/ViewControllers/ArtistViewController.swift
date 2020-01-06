@@ -35,9 +35,9 @@ class ArtistViewController: UIViewController {
             case .success(let artist):
                 self?.artistInfo = artist
                 DispatchQueue.main.async {
-                    self?.artistBio.text = artist.biography
+                    self?.artistBio.text = "\(artist.biography ?? "Biography not available")"
                     self?.yearsAliveLabel.text = "\(artist.birthday ?? "1993") - \(artist.deathday ?? "1993")"
-                    self?.nationalityLabel.text = artist.nationality
+                    self?.nationalityLabel.text = "\(artist.nationality ?? "") artist"
                     self?.artistImage.getImage(with: artist.links?.thumbnail?.href ?? "", completion: { (result) in
                         switch result {
                         case .failure:
