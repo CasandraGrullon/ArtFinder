@@ -47,16 +47,16 @@ struct Dimensions: Codable {
     }
 }
 struct Inches: Codable {
-    let text: String
+    let text: String?
 }
 struct ArtworkLinks: Codable {
     let thumbnail: Next?
     let image: Image?
 }
 struct Next: Codable {
-    let href: String
+    let href: String?
 }
 struct Image: Codable {
-    let href: String
+    let href: String?
 }
 

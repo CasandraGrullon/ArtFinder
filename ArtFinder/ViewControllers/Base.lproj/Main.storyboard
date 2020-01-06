@@ -249,79 +249,79 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AbL-eN-TjM">
-                                <rect key="frame" x="0.0" y="88" width="414" height="537.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AbL-eN-TjM">
+                                <rect key="frame" x="0.0" y="88" width="414" height="448"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Located" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiT-pL-9Ga">
-                                <rect key="frame" x="20" y="635.5" width="65.5" height="25.5"/>
+                                <rect key="frame" x="20" y="546" width="65.5" height="25.5"/>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0V-OC-Dwy">
-                                <rect key="frame" x="156" y="636.5" width="250" height="24"/>
+                                <rect key="frame" x="131" y="546" width="275" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="JEq-Wb-UPA"/>
+                                    <constraint firstAttribute="width" constant="275" id="JEq-Wb-UPA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Regular" family="Kohinoor Gujarati" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayf-Zj-4jO">
-                                <rect key="frame" x="20" y="669" width="88" height="26"/>
+                                <rect key="frame" x="20" y="591.5" width="88" height="26"/>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dates" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Qq-t1-BUV">
-                                <rect key="frame" x="156" y="670" width="250" height="24"/>
+                                <rect key="frame" x="131" y="591.5" width="275" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="i5h-yX-YWu"/>
+                                    <constraint firstAttribute="width" constant="275" id="i5h-yX-YWu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Regular" family="Kohinoor Gujarati" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIf-hg-6gN">
-                                <rect key="frame" x="20" y="703" width="74" height="26"/>
+                                <rect key="frame" x="20" y="637.5" width="74" height="26"/>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="category" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfX-vj-wEg">
-                                <rect key="frame" x="156" y="706.5" width="250" height="19.5"/>
+                                <rect key="frame" x="131" y="637.5" width="275" height="19.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="8th-ml-rpl"/>
+                                    <constraint firstAttribute="width" constant="275" id="8th-ml-rpl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medium" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGL-uo-Xc1">
-                                <rect key="frame" x="20" y="737" width="64.5" height="26"/>
+                                <rect key="frame" x="20" y="683.5" width="64.5" height="26"/>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="medium" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsa-Gz-HJc">
-                                <rect key="frame" x="156" y="738" width="250" height="24"/>
+                                <rect key="frame" x="131" y="683.5" width="275" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="bAK-rX-1vA"/>
+                                    <constraint firstAttribute="width" constant="275" id="bAK-rX-1vA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Regular" family="Kohinoor Gujarati" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tP-pt-H9A">
-                                <rect key="frame" x="20" y="771" width="34.5" height="26"/>
+                                <rect key="frame" x="20" y="729.5" width="34.5" height="26"/>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dimensions" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ezf-oh-Y8Q">
-                                <rect key="frame" x="156" y="772" width="250" height="24"/>
+                                <rect key="frame" x="131" y="729.5" width="275" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="rAi-tr-CK4"/>
+                                    <constraint firstAttribute="width" constant="275" id="rAi-tr-CK4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Regular" family="Kohinoor Gujarati" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -332,25 +332,25 @@
                         <constraints>
                             <constraint firstItem="SiT-pL-9Ga" firstAttribute="top" secondItem="AbL-eN-TjM" secondAttribute="bottom" constant="10" id="13Z-xN-ObI"/>
                             <constraint firstItem="SiT-pL-9Ga" firstAttribute="leading" secondItem="StP-Ag-COF" secondAttribute="leading" constant="20" id="48K-Lk-dPw"/>
-                            <constraint firstItem="2Qq-t1-BUV" firstAttribute="centerY" secondItem="ayf-Zj-4jO" secondAttribute="centerY" id="4NK-mN-m9s"/>
                             <constraint firstItem="8tP-pt-H9A" firstAttribute="leading" secondItem="StP-Ag-COF" secondAttribute="leading" constant="20" id="52C-LI-5w8"/>
+                            <constraint firstItem="zsa-Gz-HJc" firstAttribute="top" secondItem="lGL-uo-Xc1" secondAttribute="top" id="5Qv-3a-7MK"/>
                             <constraint firstItem="StP-Ag-COF" firstAttribute="trailing" secondItem="zsa-Gz-HJc" secondAttribute="trailing" constant="8" id="6tc-Bf-j66"/>
-                            <constraint firstItem="ayf-Zj-4jO" firstAttribute="top" secondItem="SiT-pL-9Ga" secondAttribute="bottom" constant="8" id="DPl-Ie-LIv"/>
-                            <constraint firstItem="8tP-pt-H9A" firstAttribute="top" secondItem="lGL-uo-Xc1" secondAttribute="bottom" constant="8" id="JMM-YB-VZK"/>
+                            <constraint firstItem="ayf-Zj-4jO" firstAttribute="top" secondItem="SiT-pL-9Ga" secondAttribute="bottom" constant="20" id="DPl-Ie-LIv"/>
+                            <constraint firstItem="H0V-OC-Dwy" firstAttribute="top" secondItem="SiT-pL-9Ga" secondAttribute="top" id="Hoj-gT-PQW"/>
+                            <constraint firstItem="Ezf-oh-Y8Q" firstAttribute="top" secondItem="8tP-pt-H9A" secondAttribute="top" id="JLb-dc-uvC"/>
+                            <constraint firstItem="8tP-pt-H9A" firstAttribute="top" secondItem="lGL-uo-Xc1" secondAttribute="bottom" constant="20" id="JMM-YB-VZK"/>
+                            <constraint firstItem="sfX-vj-wEg" firstAttribute="top" secondItem="xIf-hg-6gN" secondAttribute="top" id="RLz-JU-Yn5"/>
                             <constraint firstItem="lGL-uo-Xc1" firstAttribute="leading" secondItem="StP-Ag-COF" secondAttribute="leading" constant="20" id="ShY-ng-iib"/>
-                            <constraint firstItem="lGL-uo-Xc1" firstAttribute="top" secondItem="xIf-hg-6gN" secondAttribute="bottom" constant="8" id="Us2-SB-Cln"/>
+                            <constraint firstItem="lGL-uo-Xc1" firstAttribute="top" secondItem="xIf-hg-6gN" secondAttribute="bottom" constant="20" id="Us2-SB-Cln"/>
                             <constraint firstItem="ayf-Zj-4jO" firstAttribute="leading" secondItem="StP-Ag-COF" secondAttribute="leading" constant="20" id="b4R-mX-eRT"/>
-                            <constraint firstItem="zsa-Gz-HJc" firstAttribute="centerY" secondItem="lGL-uo-Xc1" secondAttribute="centerY" id="eIR-RI-SCT"/>
-                            <constraint firstItem="AbL-eN-TjM" firstAttribute="height" secondItem="kv2-LL-xNQ" secondAttribute="height" multiplier="0.6" id="glw-7Q-USZ"/>
-                            <constraint firstItem="xIf-hg-6gN" firstAttribute="top" secondItem="ayf-Zj-4jO" secondAttribute="bottom" constant="8" id="hKD-Rx-FRU"/>
+                            <constraint firstItem="AbL-eN-TjM" firstAttribute="height" secondItem="kv2-LL-xNQ" secondAttribute="height" multiplier="0.5" id="glw-7Q-USZ"/>
+                            <constraint firstItem="xIf-hg-6gN" firstAttribute="top" secondItem="ayf-Zj-4jO" secondAttribute="bottom" constant="20" id="hKD-Rx-FRU"/>
                             <constraint firstItem="AbL-eN-TjM" firstAttribute="leading" secondItem="StP-Ag-COF" secondAttribute="leading" id="hey-TH-xFF"/>
+                            <constraint firstItem="2Qq-t1-BUV" firstAttribute="top" secondItem="ayf-Zj-4jO" secondAttribute="top" id="i0w-AH-OhJ"/>
                             <constraint firstItem="xIf-hg-6gN" firstAttribute="leading" secondItem="StP-Ag-COF" secondAttribute="leading" constant="20" id="jwT-UE-VbY"/>
                             <constraint firstItem="StP-Ag-COF" firstAttribute="trailing" secondItem="AbL-eN-TjM" secondAttribute="trailing" id="kX9-yz-YHz"/>
                             <constraint firstItem="StP-Ag-COF" firstAttribute="trailing" secondItem="H0V-OC-Dwy" secondAttribute="trailing" constant="8" id="nTl-bY-TGo"/>
-                            <constraint firstItem="sfX-vj-wEg" firstAttribute="centerY" secondItem="xIf-hg-6gN" secondAttribute="centerY" id="oqP-oz-XsV"/>
                             <constraint firstItem="StP-Ag-COF" firstAttribute="trailing" secondItem="2Qq-t1-BUV" secondAttribute="trailing" constant="8" id="osb-q4-IbB"/>
-                            <constraint firstItem="Ezf-oh-Y8Q" firstAttribute="centerY" secondItem="8tP-pt-H9A" secondAttribute="centerY" id="qwI-h7-jVh"/>
-                            <constraint firstItem="H0V-OC-Dwy" firstAttribute="centerY" secondItem="SiT-pL-9Ga" secondAttribute="centerY" id="rN0-w3-3AW"/>
                             <constraint firstItem="StP-Ag-COF" firstAttribute="trailing" secondItem="sfX-vj-wEg" secondAttribute="trailing" constant="8" id="sr9-6d-PjD"/>
                             <constraint firstItem="StP-Ag-COF" firstAttribute="trailing" secondItem="Ezf-oh-Y8Q" secondAttribute="trailing" constant="8" id="v3z-jC-1n8"/>
                             <constraint firstItem="AbL-eN-TjM" firstAttribute="top" secondItem="StP-Ag-COF" secondAttribute="top" id="yeC-PQ-dnX"/>

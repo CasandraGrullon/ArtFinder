@@ -72,7 +72,7 @@ struct ArtFinderAPIClient {
     
     static func getArtworks(with artID: String, completion: @escaping (Result<Embed, AppError>) -> ()) {
         
-        let endpointURL = "https://api.artsy.net/api/artworks?artist_id=\(artID)"
+        let endpointURL = "https://api.artsy.net/api/artworks?size=100&artist_id=\(artID)"
         
         guard let url = URL(string: endpointURL) else {
             completion(.failure(.badURL(endpointURL)))
