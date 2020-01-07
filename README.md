@@ -23,6 +23,10 @@ By selected a table cell the view segues to a description of the artwork include
 
 ![view4](Assests/screenshot4.png)
 
+## Gif
+
+![gif](Assests/app.gif)
+
 ## Getting artist information based on the search results
 ```swift
   func loadData(for search: String) {
