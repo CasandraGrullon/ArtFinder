@@ -343,6 +343,7 @@
                             <constraint firstItem="lGL-uo-Xc1" firstAttribute="leading" secondItem="StP-Ag-COF" secondAttribute="leading" constant="20" id="ShY-ng-iib"/>
                             <constraint firstItem="lGL-uo-Xc1" firstAttribute="top" secondItem="xIf-hg-6gN" secondAttribute="bottom" constant="20" id="Us2-SB-Cln"/>
                             <constraint firstItem="ayf-Zj-4jO" firstAttribute="leading" secondItem="StP-Ag-COF" secondAttribute="leading" constant="20" id="b4R-mX-eRT"/>
+                            <constraint firstItem="H0V-OC-Dwy" firstAttribute="top" secondItem="AbL-eN-TjM" secondAttribute="bottom" constant="10" id="d8Q-xd-Vul"/>
                             <constraint firstItem="AbL-eN-TjM" firstAttribute="height" secondItem="kv2-LL-xNQ" secondAttribute="height" multiplier="0.5" id="glw-7Q-USZ"/>
                             <constraint firstItem="xIf-hg-6gN" firstAttribute="top" secondItem="ayf-Zj-4jO" secondAttribute="bottom" constant="20" id="hKD-Rx-FRU"/>
                             <constraint firstItem="AbL-eN-TjM" firstAttribute="leading" secondItem="StP-Ag-COF" secondAttribute="leading" id="hey-TH-xFF"/>
@@ -358,11 +359,7 @@
                         <viewLayoutGuide key="safeArea" id="StP-Ag-COF"/>
                     </view>
                     <navigationItem key="navigationItem" id="qmi-gA-YkP">
-                        <barButtonItem key="rightBarButtonItem" title="Share" image="paperplane.fill" catalog="system" id="rKF-3n-tD3">
-                            <connections>
-                                <action selector="shareButtonClicked:" destination="pvg-5f-z9H" id="OvZ-BQ-aVo"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Share" image="paperplane.fill" catalog="system" id="rKF-3n-tD3"/>
                     </navigationItem>
                     <connections>
                         <outlet property="artImage" destination="AbL-eN-TjM" id="Izs-bV-c9p"/>
@@ -371,7 +368,6 @@
                         <outlet property="dimensionsLabel" destination="Ezf-oh-Y8Q" id="vjq-sB-UOS"/>
                         <outlet property="locationLabel" destination="H0V-OC-Dwy" id="dmb-ss-SI4"/>
                         <outlet property="mediumLabel" destination="zsa-Gz-HJc" id="ur4-tF-L5Y"/>
-                        <outlet property="shareButton" destination="rKF-3n-tD3" id="ste-Em-SlS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cbe-dA-fQs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

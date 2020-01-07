@@ -13,7 +13,6 @@ class ArtworksViewController: UIViewController {
     @IBOutlet weak var artworkTableview: UITableView!
     
     var artist: ArtistInfo?
-    
     var artworks = [Artwork]() {
         didSet{
             DispatchQueue.main.async {
@@ -21,6 +20,7 @@ class ArtworksViewController: UIViewController {
             }
         }
     }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +40,8 @@ class ArtworksViewController: UIViewController {
             }
         }
     }
+
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let detailVC = segue.destination as? ArtworkDetailViewController, let indexPath = artworkTableview.indexPathForSelectedRow else {
             fatalError("issue in artwork segue")
@@ -68,3 +70,4 @@ extension ArtworksViewController: UITableViewDelegate {
         return 200
     }
 }
+
