@@ -20,6 +20,8 @@ class LocationService {
                     completionHandler(location.coordinate, nil)
                     return
                 }
+            } else {
+                print("nothing")
             }
             completionHandler(kCLLocationCoordinate2DInvalid, error as NSError?)
         }

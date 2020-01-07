@@ -8,62 +8,61 @@
 
 import UIKit
 import MapKit
-
-class ArtLocation: NSObject, MKAnnotation {
-    var art: Artwork?
-    let coordinate: CLLocationCoordinate2D
-    
-    init(art: Artwork, coordinate: CLLocationCoordinate2D){
-        self.art = art
-        self.coordinate = coordinate
-        super.init()
-    }
-}
+import CoreLocation
+//
+//class ArtLocation: NSObject, MKAnnotation {
+//    var location: String
+//    let coordinate: CLLocationCoordinate2D
+//
+//    init(location: String, coordinate: CLLocationCoordinate2D){
+//        self.location = location
+//        self.coordinate = coordinate
+//        super.init()
+//    }
+//    var subtitle: String? {
+//       return location
+//     }
+//}
 
 class MuseumLocationViewController: UIViewController {
     
     @IBOutlet weak var map: MKMapView!
     
-    var artworks: ArtLocation?
-    var coordinates: CLLocationCoordinate2D?
-    
+    var artworks: Artwork?
+    var coordinateINeed: CLLocationCoordinate2D?
+    private var annotations = [MKAnnotation]()
     override func viewDidLoad() {
         super.viewDidLoad()
         getLocation()
-        print(artworks?.art?.collectingInstitution)
-        map.delegate = self
+        //makeAnnotations()
+        //print(artworks?.art?.collectingInstitution)
     }
     
-    
-    
     func getLocation() {
-        let location = artworks?.art?.collectingInstitution
+        let location = artworks?.collectingInstitution
         LocationService.getCoordinates(addressString: location ?? "New York") { [weak self] (coordinate, error) in
             if let error = error{
                 print("this is a\(error) type error")
             } else {
-                self?.coordinates?.latitude = coordinate.latitude
-                self?.coordinates?.longitude = coordinate.longitude
+                self?.coordinateINeed = coordinate
+                
+                self?.makeAnnotations()
             }
         }
     }
-    
 }
-extension MuseumLocationViewController: MKMapViewDelegate {
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard let annotation = annotation as? ArtLocation else { return nil }
-        let identifier = "marker"
-        var view: MKMarkerAnnotationView
-        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-            as? MKMarkerAnnotationView {
-            dequeuedView.annotation = annotation
-            view = dequeuedView
-        } else {
-            view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            view.canShowCallout = true
-            view.calloutOffset = CGPoint(x: -5, y: 5)
-            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-        }
-        return view
+
+extension MuseumLocationViewController{
+    private func makeAnnotations() {
+        map.removeAnnotations(annotations)
+        annotations.removeAll()
+        let annotation = MKPointAnnotation()
+        let coordinate = CLLocationCoordinate2D.init(latitude: coordinateINeed!.latitude, longitude: coordinateINeed!.longitude)
+        annotation.coordinate = coordinate
+        annotation.title = artworks?.collectingInstitution
+        self.annotations.append(annotation)
+        map.showAnnotations(annotations, animated: true)
     }
 }
+
+

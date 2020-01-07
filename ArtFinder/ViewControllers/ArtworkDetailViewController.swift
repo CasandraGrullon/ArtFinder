@@ -16,6 +16,7 @@ class ArtworkDetailViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var dimensionsLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     
     var artwork: Artwork?
     
@@ -46,11 +47,8 @@ class ArtworkDetailViewController: UIViewController {
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let museumMapVC = segue.destination as? MuseumLocationViewController else {
-            fatalError("issue with map segue")
-        }
-        museumMapVC.artworks?.art = artwork
+    @IBAction func shareButtonClicked(_ sender: Any) {
     }
 
 }
+

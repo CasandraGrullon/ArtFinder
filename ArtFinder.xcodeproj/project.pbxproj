@@ -165,8 +165,8 @@
 				C649B64423BFB3DC0006B6A8 /* ArtworksViewController.swift */,
 				C6141BB123BBC34E002D576B /* ArtistCell.swift */,
 				C6141BB323BBD492002D576B /* ArtworkDetailViewController.swift */,
-				C6502D0D23C3EA580038906A /* MuseumLocationViewController.swift */,
 				C635D94D23B7D2CF00E97F84 /* Main.storyboard */,
+				C6502D0D23C3EA580038906A /* MuseumLocationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

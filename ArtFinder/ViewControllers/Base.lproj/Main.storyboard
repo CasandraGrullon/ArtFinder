@@ -358,9 +358,9 @@
                         <viewLayoutGuide key="safeArea" id="StP-Ag-COF"/>
                     </view>
                     <navigationItem key="navigationItem" id="qmi-gA-YkP">
-                        <barButtonItem key="rightBarButtonItem" title="Map" id="3TJ-xX-SGw">
+                        <barButtonItem key="rightBarButtonItem" title="Share" image="paperplane.fill" catalog="system" id="rKF-3n-tD3">
                             <connections>
-                                <segue destination="PGo-AP-i4B" kind="show" id="pd9-O5-7zy"/>
+                                <action selector="shareButtonClicked:" destination="pvg-5f-z9H" id="OvZ-BQ-aVo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -371,41 +371,12 @@
                         <outlet property="dimensionsLabel" destination="Ezf-oh-Y8Q" id="vjq-sB-UOS"/>
                         <outlet property="locationLabel" destination="H0V-OC-Dwy" id="dmb-ss-SI4"/>
                         <outlet property="mediumLabel" destination="zsa-Gz-HJc" id="ur4-tF-L5Y"/>
+                        <outlet property="shareButton" destination="rKF-3n-tD3" id="ste-Em-SlS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cbe-dA-fQs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3269.5652173913045" y="115.84821428571428"/>
-        </scene>
-        <!--Museum Location View Controller-->
-        <scene sceneID="JcV-B6-tD2">
-            <objects>
-                <viewController id="PGo-AP-i4B" customClass="MuseumLocationViewController" customModule="ArtFinder" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0jl-eg-Rbk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qu0-m7-7Kc">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                            </mapView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="qu0-m7-7Kc" firstAttribute="top" secondItem="5si-J1-Ljm" secondAttribute="top" id="EPA-OF-8gk"/>
-                            <constraint firstItem="qu0-m7-7Kc" firstAttribute="leading" secondItem="5si-J1-Ljm" secondAttribute="leading" id="QJd-hz-igl"/>
-                            <constraint firstItem="5si-J1-Ljm" firstAttribute="bottom" secondItem="qu0-m7-7Kc" secondAttribute="bottom" id="fYV-Oc-nhf"/>
-                            <constraint firstItem="5si-J1-Ljm" firstAttribute="trailing" secondItem="qu0-m7-7Kc" secondAttribute="trailing" id="lTK-Uz-64r"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="5si-J1-Ljm"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="iQX-Of-zXK"/>
-                    <connections>
-                        <outlet property="map" destination="qu0-m7-7Kc" id="VCQ-wq-4u7"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mgj-ns-Jhu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3922" y="117"/>
         </scene>
         <!--Art Finder-->
         <scene sceneID="t0p-Iz-zTy">
@@ -453,5 +424,6 @@
     </scenes>
     <resources>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+        <image name="paperplane.fill" catalog="system" width="64" height="60"/>
     </resources>
 </document>
