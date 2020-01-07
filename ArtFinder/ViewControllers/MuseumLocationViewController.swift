@@ -18,7 +18,6 @@ class ArtLocation: NSObject, MKAnnotation {
         self.coordinate = coordinate
         super.init()
     }
-
 }
 
 class MuseumLocationViewController: UIViewController {
@@ -31,8 +30,11 @@ class MuseumLocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getLocation()
+        print(artworks?.art?.collectingInstitution)
         map.delegate = self
     }
+    
+    
     
     func getLocation() {
         let location = artworks?.art?.collectingInstitution
@@ -40,12 +42,11 @@ class MuseumLocationViewController: UIViewController {
             if let error = error{
                 print("this is a\(error) type error")
             } else {
-                self?.coordinates = coordinate
+                self?.coordinates?.latitude = coordinate.latitude
+                self?.coordinates?.longitude = coordinate.longitude
             }
         }
     }
-    
-    
     
 }
 extension MuseumLocationViewController: MKMapViewDelegate {
