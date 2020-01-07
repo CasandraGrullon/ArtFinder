@@ -9,20 +9,33 @@
 import UIKit
 import MapKit
 
+class ArtLocation: NSObject, MKAnnotation {
+    let art: Artwork?
+    let coordinate: CLLocationCoordinate2D
+    
+    init(art: Artwork, coordinate: CLLocationCoordinate2D){
+        self.art = art
+        self.coordinate = coordinate
+        super.init()
+    }
+
+}
+
 class MuseumLocationViewController: UIViewController {
     
     @IBOutlet weak var map: MKMapView!
     
-    var artworks: Artwork?
+    var artworks: ArtLocation?
     var coordinates: CLLocationCoordinate2D?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getLocation()
+        map.delegate = self
     }
     
     func getLocation() {
-        let location = artworks?.collectingInstitution
+        let location = artworks?.art?.collectingInstitution
         
         LocationService.getCoordinates(addressString: location ?? "New York") { [weak self] (coordinate, error) in
             if let error = error{
@@ -35,4 +48,22 @@ class MuseumLocationViewController: UIViewController {
     
     
     
+}
+extension MuseumLocationViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard let annotation = annotation as? ArtLocation else { return nil }
+        let identifier = "marker"
+        var view: MKMarkerAnnotationView
+        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+            as? MKMarkerAnnotationView {
+            dequeuedView.annotation = annotation
+            view = dequeuedView
+        } else {
+            view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            view.canShowCallout = true
+            view.calloutOffset = CGPoint(x: -5, y: 5)
+            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        }
+        return view
+    }
 }
