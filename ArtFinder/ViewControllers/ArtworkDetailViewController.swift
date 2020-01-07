@@ -45,5 +45,12 @@ class ArtworkDetailViewController: UIViewController {
         }
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let museumMapVC = segue.destination as? MuseumLocationViewController else {
+            fatalError("issue with map segue")
+        }
+        museumMapVC.artworks?.art = artwork
+    }
 
 }

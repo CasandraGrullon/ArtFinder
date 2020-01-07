@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 class ArtLocation: NSObject, MKAnnotation {
-    let art: Artwork?
+    var art: Artwork?
     let coordinate: CLLocationCoordinate2D
     
     init(art: Artwork, coordinate: CLLocationCoordinate2D){
@@ -36,7 +36,6 @@ class MuseumLocationViewController: UIViewController {
     
     func getLocation() {
         let location = artworks?.art?.collectingInstitution
-        
         LocationService.getCoordinates(addressString: location ?? "New York") { [weak self] (coordinate, error) in
             if let error = error{
                 print("this is a\(error) type error")
