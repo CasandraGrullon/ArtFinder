@@ -25,7 +25,7 @@ By selected a table cell the view segues to a description of the artwork include
 
 ## Gif
 
-![gif](Assests/app.gif)
+![gif](Assests/ArtFinder-app.gif)
 
 ## Getting artist information based on the search results
 ```swift
