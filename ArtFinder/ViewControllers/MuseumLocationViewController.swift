@@ -14,6 +14,7 @@ class MuseumLocationViewController: UIViewController {
     @IBOutlet weak var map: MKMapView!
     
     var artworks: Artwork?
+    var coordinates: CLLocationCoordinate2D?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +24,11 @@ class MuseumLocationViewController: UIViewController {
     func getLocation() {
         let location = artworks?.collectingInstitution
         
-        LocationService.getCoordinates(addressString: location ?? "New York") { (coordinate, error) in
+        LocationService.getCoordinates(addressString: location ?? "New York") { [weak self] (coordinate, error) in
             if let error = error{
                 print("this is a\(error) type error")
             } else {
-                
+                self?.coordinates = coordinate
             }
         }
     }

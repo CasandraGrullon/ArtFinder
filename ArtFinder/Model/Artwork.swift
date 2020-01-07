@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct Art: Codable {
     let embedded: Embed
