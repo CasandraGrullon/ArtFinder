@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,8 +34,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JFT-dn-96r">
-                                                    <rect key="frame" x="20" y="20" width="200" height="80"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="JFT-dn-96r">
+                                                    <rect key="frame" x="20" y="21" width="200" height="77.5"/>
+                                                    <color key="tintColor" red="0.80776757489999995" green="0.80776757489999995" blue="0.80776757489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="31w-Qp-5o3"/>
                                                     </constraints>
@@ -169,72 +171,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uln-ag-5ff">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="61G-dy-i5E">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="sectionIndexBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="artistCell" rowHeight="194" id="Ljx-S7-aCU" customClass="ArtistCell" customModule="ArtFinder" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="194"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ljx-S7-aCU" id="4ju-Z7-yNJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="194"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="c0A-YY-xgC">
+                                    <size key="itemSize" width="414" height="345"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="artworkCell" id="Tjg-CB-ui9" customClass="ArtworkCell" customModule="ArtFinder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="345"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5VY-s1-hfm">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="345"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mj8-tm-LAe">
-                                                    <rect key="frame" x="20" y="11" width="200" height="172"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="200" id="Hm7-XN-C1Y"/>
-                                                    </constraints>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h0h-d9-q1G">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="345"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Tj-Kf-THr">
-                                                    <rect key="frame" x="228" y="19" width="158" height="25.5"/>
-                                                    <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Bm-lq-rsr">
-                                                    <rect key="frame" x="228" y="52.5" width="158" height="22.5"/>
-                                                    <fontDescription key="fontDescription" name="KohinoorGujarati-Regular" family="Kohinoor Gujarati" pointSize="15"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Mj8-tm-LAe" secondAttribute="bottom" id="3xg-je-HMj"/>
-                                                <constraint firstItem="Mj8-tm-LAe" firstAttribute="top" secondItem="4ju-Z7-yNJ" secondAttribute="topMargin" id="70N-e2-FYZ"/>
-                                                <constraint firstItem="8Tj-Kf-THr" firstAttribute="top" secondItem="4ju-Z7-yNJ" secondAttribute="topMargin" constant="8" id="L03-Oa-2Vt"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="8Bm-lq-rsr" secondAttribute="trailing" constant="8" id="M2r-gv-E6U"/>
-                                                <constraint firstItem="Mj8-tm-LAe" firstAttribute="leading" secondItem="4ju-Z7-yNJ" secondAttribute="leadingMargin" id="dX7-ie-j9D"/>
-                                                <constraint firstItem="8Bm-lq-rsr" firstAttribute="leading" secondItem="Mj8-tm-LAe" secondAttribute="trailing" constant="8" id="feD-rm-9ce"/>
-                                                <constraint firstItem="8Bm-lq-rsr" firstAttribute="top" secondItem="8Tj-Kf-THr" secondAttribute="bottom" constant="8" id="kKw-I7-are"/>
-                                                <constraint firstItem="8Tj-Kf-THr" firstAttribute="leading" secondItem="Mj8-tm-LAe" secondAttribute="trailing" constant="8" id="le6-lC-mU5"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="8Tj-Kf-THr" secondAttribute="trailing" constant="8" id="pPQ-FO-CJf"/>
+                                                <constraint firstAttribute="bottom" secondItem="h0h-d9-q1G" secondAttribute="bottom" id="JiZ-tK-Kna"/>
+                                                <constraint firstItem="h0h-d9-q1G" firstAttribute="top" secondItem="5VY-s1-hfm" secondAttribute="top" id="dRg-UL-mP1"/>
+                                                <constraint firstItem="h0h-d9-q1G" firstAttribute="leading" secondItem="5VY-s1-hfm" secondAttribute="leading" id="mJb-YX-fvj"/>
+                                                <constraint firstAttribute="trailing" secondItem="h0h-d9-q1G" secondAttribute="trailing" id="tdf-ON-k5O"/>
                                             </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="414" height="345"/>
                                         <connections>
-                                            <outlet property="artworkDateLabel" destination="8Bm-lq-rsr" id="WF9-zW-MV0"/>
-                                            <outlet property="artworkImage" destination="Mj8-tm-LAe" id="vcc-P5-A7q"/>
-                                            <outlet property="artworkTitle" destination="8Tj-Kf-THr" id="Owd-oa-JHy"/>
-                                            <segue destination="pvg-5f-z9H" kind="show" id="0gs-9C-3gS"/>
+                                            <outlet property="artworkImage" destination="h0h-d9-q1G" id="u1w-Pr-aVL"/>
                                         </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="0H3-zD-lEh" firstAttribute="bottom" secondItem="uln-ag-5ff" secondAttribute="bottom" id="D17-MO-0Hw"/>
-                            <constraint firstItem="0H3-zD-lEh" firstAttribute="trailing" secondItem="uln-ag-5ff" secondAttribute="trailing" id="H29-mE-q6a"/>
-                            <constraint firstItem="uln-ag-5ff" firstAttribute="leading" secondItem="0H3-zD-lEh" secondAttribute="leading" id="Kvv-nC-jeE"/>
-                            <constraint firstItem="uln-ag-5ff" firstAttribute="top" secondItem="0H3-zD-lEh" secondAttribute="top" id="esp-lX-aG8"/>
+                            <constraint firstItem="61G-dy-i5E" firstAttribute="leading" secondItem="0H3-zD-lEh" secondAttribute="leading" id="0ko-QE-DiN"/>
+                            <constraint firstItem="0H3-zD-lEh" firstAttribute="bottom" secondItem="61G-dy-i5E" secondAttribute="bottom" id="D2I-aI-m5m"/>
+                            <constraint firstItem="0H3-zD-lEh" firstAttribute="trailing" secondItem="61G-dy-i5E" secondAttribute="trailing" id="H12-nk-lsP"/>
+                            <constraint firstItem="61G-dy-i5E" firstAttribute="top" secondItem="0H3-zD-lEh" secondAttribute="top" id="NA9-oM-Mi6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0H3-zD-lEh"/>
                     </view>
                     <navigationItem key="navigationItem" id="guM-wt-U2G"/>
                     <connections>
-                        <outlet property="artworkTableview" destination="uln-ag-5ff" id="0et-k0-jr3"/>
+                        <outlet property="artworkCollection" destination="61G-dy-i5E" id="zwX-jw-8Qb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VBP-Re-cbp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -250,16 +234,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AbL-eN-TjM">
-                                <rect key="frame" x="0.0" y="88" width="414" height="448"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="448"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Located" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiT-pL-9Ga">
-                                <rect key="frame" x="20" y="546" width="65.5" height="25.5"/>
+                                <rect key="frame" x="20" y="502" width="65.5" height="25.5"/>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0V-OC-Dwy">
-                                <rect key="frame" x="131" y="546" width="275" height="24"/>
+                                <rect key="frame" x="131" y="502" width="275" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="275" id="JEq-Wb-UPA"/>
                                 </constraints>
@@ -268,13 +252,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayf-Zj-4jO">
-                                <rect key="frame" x="20" y="591.5" width="88" height="26"/>
+                                <rect key="frame" x="20" y="547.5" width="88" height="26"/>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dates" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Qq-t1-BUV">
-                                <rect key="frame" x="131" y="591.5" width="275" height="24"/>
+                                <rect key="frame" x="131" y="547.5" width="275" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="275" id="i5h-yX-YWu"/>
                                 </constraints>
@@ -283,13 +267,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIf-hg-6gN">
-                                <rect key="frame" x="20" y="637.5" width="74" height="26"/>
+                                <rect key="frame" x="20" y="593.5" width="74" height="26"/>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="category" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfX-vj-wEg">
-                                <rect key="frame" x="131" y="637.5" width="275" height="19.5"/>
+                                <rect key="frame" x="131" y="593.5" width="275" height="19.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="275" id="8th-ml-rpl"/>
                                 </constraints>
@@ -298,13 +282,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medium" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGL-uo-Xc1">
-                                <rect key="frame" x="20" y="683.5" width="64.5" height="26"/>
+                                <rect key="frame" x="20" y="639.5" width="64.5" height="26"/>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="medium" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsa-Gz-HJc">
-                                <rect key="frame" x="131" y="683.5" width="275" height="24"/>
+                                <rect key="frame" x="131" y="639.5" width="275" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="275" id="bAK-rX-1vA"/>
                                 </constraints>
@@ -313,13 +297,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tP-pt-H9A">
-                                <rect key="frame" x="20" y="729.5" width="34.5" height="26"/>
+                                <rect key="frame" x="20" y="685.5" width="34.5" height="26"/>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dimensions" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ezf-oh-Y8Q">
-                                <rect key="frame" x="131" y="729.5" width="275" height="24"/>
+                                <rect key="frame" x="131" y="685.5" width="275" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="275" id="rAi-tr-CK4"/>
                                 </constraints>
@@ -398,6 +382,51 @@
             </objects>
             <point key="canvasLocation" x="600" y="117"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="wQ9-4S-N7L">
+            <objects>
+                <viewController id="G0N-13-U17" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oHs-sl-8Ey">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aV4-GD-qaP">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Go6-0U-lqM">
+                                    <size key="itemSize" width="414" height="295"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="OXu-wA-5kv">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="295"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="d1N-zJ-kWH">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="295"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="414" height="295"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="R1a-nc-aPp" firstAttribute="trailing" secondItem="aV4-GD-qaP" secondAttribute="trailing" id="a2M-4S-J5w"/>
+                            <constraint firstItem="R1a-nc-aPp" firstAttribute="bottom" secondItem="aV4-GD-qaP" secondAttribute="bottom" id="ffe-zP-g9u"/>
+                            <constraint firstItem="aV4-GD-qaP" firstAttribute="leading" secondItem="R1a-nc-aPp" secondAttribute="leading" id="oKz-dw-7mv"/>
+                            <constraint firstItem="aV4-GD-qaP" firstAttribute="top" secondItem="R1a-nc-aPp" secondAttribute="top" id="xEU-b5-Oqg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="R1a-nc-aPp"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VB1-Dc-QLK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iQd-OB-fsC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="598.55072463768124" y="790.84821428571422"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="YB6-Ws-Khl">
             <objects>
@@ -411,15 +440,37 @@
                     </tabBar>
                     <connections>
                         <segue destination="vqX-Vh-hct" kind="relationship" relationship="viewControllers" id="kAg-bz-Jdh"/>
+                        <segue destination="4Rq-80-MUZ" kind="relationship" relationship="viewControllers" id="6gf-8J-DiG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJ0-5N-8RE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-57.971014492753625" y="116.51785714285714"/>
         </scene>
+        <!--Favorites-->
+        <scene sceneID="vSu-I6-j1T">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Rq-80-MUZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="heart.fill" catalog="system" id="lsn-aa-R29"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HYg-fR-Hdi">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="G0N-13-U17" kind="relationship" relationship="rootViewController" id="8cb-UP-Evs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="edp-mI-CEy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-58" y="791"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="heart.fill" catalog="system" width="64" height="54"/>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
         <image name="paperplane.fill" catalog="system" width="64" height="60"/>
+        <image name="square" catalog="system" width="64" height="56"/>
     </resources>
 </document>

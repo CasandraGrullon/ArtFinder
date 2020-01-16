@@ -9,23 +9,22 @@
 import UIKit
 
 class ArtworksViewController: UIViewController {
-    
-    @IBOutlet weak var artworkTableview: UITableView!
+
+    @IBOutlet weak var artworkCollection: UICollectionView!
     
     var artist: ArtistInfo?
     var artworks = [Artwork]() {
         didSet{
             DispatchQueue.main.async {
-                self.artworkTableview.reloadData()
+                self.artworkCollection.reloadData()
             }
         }
     }
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        artworkTableview.dataSource = self
-        artworkTableview.delegate = self
+        artworkCollection.delegate = self
+        artworkCollection.dataSource = self
         loadArtworks(for: artist!)
         navigationItem.title = artist?.name
     }
@@ -40,34 +39,30 @@ class ArtworksViewController: UIViewController {
             }
         }
     }
-
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let detailVC = segue.destination as? ArtworkDetailViewController, let indexPath = artworkTableview.indexPathForSelectedRow else {
-            fatalError("issue in artwork segue")
-        }
-        detailVC.artwork = artworks[indexPath.row]
-    }
+//
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard let detailVC = segue.destination as? ArtworkDetailViewController, let indexPath = artworkTableview.indexPathForSelectedRow else {
+//            fatalError("issue in artwork segue")
+//        }
+//        detailVC.artwork = artworks[indexPath.row]
+//    }
 }
-
-extension ArtworksViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension ArtworksViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return artworks.count
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = artworkTableview.dequeueReusableCell(withIdentifier: "artistCell", for: indexPath) as? ArtistCell else {
-            fatalError("issue with artist cell")
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "artworkCell", for: indexPath) as? ArtworkCell else {
+            fatalError("could not downcast to artwork cell")
         }
-        let art = artworks[indexPath.row]
-        cell.configureCell(for: art)
+        let artwork = artworks[indexPath.row]
+        cell.configureCell(for: artwork)
         return cell
     }
 }
-
-extension ArtworksViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+extension ArtworksViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return 
     }
+    
 }
-

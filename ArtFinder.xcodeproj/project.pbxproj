@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C6141BB023BBBE53002D576B /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6141BAF23BBBE53002D576B /* ArtistViewController.swift */; };
-		C6141BB223BBC34E002D576B /* ArtistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6141BB123BBC34E002D576B /* ArtistCell.swift */; };
 		C6141BB423BBD492002D576B /* ArtworkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6141BB323BBD492002D576B /* ArtworkDetailViewController.swift */; };
 		C635D94823B7D2CF00E97F84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D94723B7D2CF00E97F84 /* AppDelegate.swift */; };
 		C635D94A23B7D2CF00E97F84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D94923B7D2CF00E97F84 /* SceneDelegate.swift */; };
@@ -30,6 +29,9 @@
 		C6502D0E23C3EA580038906A /* MuseumLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6502D0D23C3EA580038906A /* MuseumLocationViewController.swift */; };
 		C6502D1023C3F0460038906A /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6502D0F23C3F0460038906A /* LocationService.swift */; };
 		C6597E0D23BAA41F00F2F48B /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6597E0C23BAA41F00F2F48B /* SearchCell.swift */; };
+		C667BDDF23D0C7A100037386 /* ArtworkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C667BDDE23D0C7A100037386 /* ArtworkCell.swift */; };
+		C6F4563323CBBDE0001E8369 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F4563223CBBDE0001E8369 /* FavoritesViewController.swift */; };
+		C6F4563523CBBE8C001E8369 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F4563423CBBE8C001E8369 /* Favorites.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +46,6 @@
 
 /* Begin PBXFileReference section */
 		C6141BAF23BBBE53002D576B /* ArtistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
-		C6141BB123BBC34E002D576B /* ArtistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistCell.swift; sourceTree = "<group>"; };
 		C6141BB323BBD492002D576B /* ArtworkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkDetailViewController.swift; sourceTree = "<group>"; };
 		C635D94423B7D2CF00E97F84 /* ArtFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C635D94723B7D2CF00E97F84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +71,9 @@
 		C6502D0D23C3EA580038906A /* MuseumLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumLocationViewController.swift; sourceTree = "<group>"; };
 		C6502D0F23C3F0460038906A /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		C6597E0C23BAA41F00F2F48B /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		C667BDDE23D0C7A100037386 /* ArtworkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkCell.swift; sourceTree = "<group>"; };
+		C6F4563223CBBDE0001E8369 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		C6F4563423CBBE8C001E8369 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,7 @@
 				C635D96923B7E5CF00E97F84 /* ArtistResults.swift */,
 				C635D96B23B7E90600E97F84 /* ArtistInfo.swift */,
 				C635D96D23B80E0700E97F84 /* Artwork.swift */,
+				C6F4563423CBBE8C001E8369 /* Favorites.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -160,13 +165,13 @@
 			isa = PBXGroup;
 			children = (
 				C635D94B23B7D2CF00E97F84 /* SearchViewController.swift */,
-				C6597E0C23BAA41F00F2F48B /* SearchCell.swift */,
 				C6141BAF23BBBE53002D576B /* ArtistViewController.swift */,
 				C649B64423BFB3DC0006B6A8 /* ArtworksViewController.swift */,
-				C6141BB123BBC34E002D576B /* ArtistCell.swift */,
 				C6141BB323BBD492002D576B /* ArtworkDetailViewController.swift */,
-				C635D94D23B7D2CF00E97F84 /* Main.storyboard */,
+				C6F4563223CBBDE0001E8369 /* FavoritesViewController.swift */,
 				C6502D0D23C3EA580038906A /* MuseumLocationViewController.swift */,
+				C667BDDD23D0C64800037386 /* Custom Cells */,
+				C635D94D23B7D2CF00E97F84 /* Main.storyboard */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -177,6 +182,15 @@
 				C6502D0B23C3CADE0038906A /* Secrets.swift */,
 			);
 			path = Secrets;
+			sourceTree = "<group>";
+		};
+		C667BDDD23D0C64800037386 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C6597E0C23BAA41F00F2F48B /* SearchCell.swift */,
+				C667BDDE23D0C7A100037386 /* ArtworkCell.swift */,
+			);
+			path = "Custom Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,11 +295,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C635D97123B811BD00E97F84 /* NetworkHelper.swift in Sources */,
+				C667BDDF23D0C7A100037386 /* ArtworkCell.swift in Sources */,
 				C6502D0C23C3CADE0038906A /* Secrets.swift in Sources */,
 				C6597E0D23BAA41F00F2F48B /* SearchCell.swift in Sources */,
 				C6141BB423BBD492002D576B /* ArtworkDetailViewController.swift in Sources */,
 				C649B64523BFB3DC0006B6A8 /* ArtworksViewController.swift in Sources */,
-				C6141BB223BBC34E002D576B /* ArtistCell.swift in Sources */,
 				C6502D1023C3F0460038906A /* LocationService.swift in Sources */,
 				C635D96E23B80E0700E97F84 /* Artwork.swift in Sources */,
 				C635D94C23B7D2CF00E97F84 /* SearchViewController.swift in Sources */,
@@ -298,6 +312,8 @@
 				C635D97A23B8134A00E97F84 /* ArtFinderAPIClient.swift in Sources */,
 				C635D96C23B7E90600E97F84 /* ArtistInfo.swift in Sources */,
 				C635D97823B8131500E97F84 /* ImageViewExt.swift in Sources */,
+				C6F4563523CBBE8C001E8369 /* Favorites.swift in Sources */,
+				C6F4563323CBBDE0001E8369 /* FavoritesViewController.swift in Sources */,
 				C635D94A23B7D2CF00E97F84 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

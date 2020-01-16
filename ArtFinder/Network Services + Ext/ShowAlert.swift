@@ -15,11 +15,10 @@ extension UIViewController {
     alertController.addAction(okAction)
     present(alertController, animated: true, completion: nil)
   }
-   
-    func activityController(items: [Any], whereToShare: [UIActivity]){
-        let activity = UIActivityViewController(activityItems: items, applicationActivities: nil)
-        present(activity, animated: true)
-        
-    }
 }
+//    func activityController(items: [Any], whereToShare: [UIActivity]){
+//        let activity = UIActivityViewController(activityItems: items, applicationActivities: nil)
+//        present(activity, animated: true)
+//
+//    }
 
