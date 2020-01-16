@@ -39,13 +39,13 @@ class ArtworksViewController: UIViewController {
             }
         }
     }
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let detailVC = segue.destination as? ArtworkDetailViewController, let indexPath = artworkTableview.indexPathForSelectedRow else {
-//            fatalError("issue in artwork segue")
-//        }
-//        detailVC.artwork = artworks[indexPath.row]
-//    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailVC = segue.destination as? ArtworkDetailViewController, let indexPath = artworkCollection.indexPathsForSelectedItems?.first else {
+            fatalError("issue in artwork segue")
+        }
+        detailVC.artwork = artworks[indexPath.row]
+    }
 }
 extension ArtworksViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -62,7 +62,19 @@ extension ArtworksViewController: UICollectionViewDataSource {
 }
 extension ArtworksViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return 
+        let itemSpacing: CGFloat = 1
+        let maxWidth = UIScreen.main.bounds.size.width
+        let numberOfItems: CGFloat = 1
+        let totalSpace: CGFloat = numberOfItems * itemSpacing
+        let itemWidth: CGFloat = (maxWidth - totalSpace) / numberOfItems
+        
+        return CGSize(width: itemWidth, height: itemWidth)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
     }
     
 }
